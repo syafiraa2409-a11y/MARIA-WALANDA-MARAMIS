@@ -1,0 +1,1639 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Maria Walanda Maramis</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap">
+<style>
+/* Tema: kain Bentenan Minahasa. Dasar hitam pewarna Sangket, merah Lelenu, kuning Lenu, biru-hijau Taun.
+   Pola jaring segi enam (Pinatikan) bergerak pelan di hero, siluet waruga dan Gunung Klabat sebagai penanda daerah.
+   Satu kolom bacaan, bagian interaktif: garis waktu, kolintang, motif, kuis. */
+:root {
+  --bg: #14100E;
+  --surface: #1F1815;
+  --fg: #F1E8DC;
+  --muted: #B9AC9C;
+  --line: #3A2F29;
+  --red: #E5584A;
+  --ochre: #E3A83B;
+  --teal: #5DB1B6;
+  --on-ochre: #14100E;
+  --stripe-red: #C93A2E;
+  --stripe-ochre: #D9972B;
+  --stripe-teal: #2F7F86;
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #F2F0ED; --surface: #FFFFFF; --fg: #1E1714; --muted: #5A4E45; --line: #D9D2CA;
+    --red: #A3241B; --ochre: #85530A; --teal: #14666C; --on-ochre: #FFFFFF;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #F2F0ED; --surface: #FFFFFF; --fg: #1E1714; --muted: #5A4E45; --line: #D9D2CA;
+  --red: #A3241B; --ochre: #85530A; --teal: #14666C; --on-ochre: #FFFFFF;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 4.5rem; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  margin: 0;
+  padding-block: 0 5.5rem;
+  padding-left: var(--gl);
+  padding-right: var(--gr);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  z-index: 40;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+.wrap { max-width: 46rem; margin-inline: auto; min-width: 0; }
+.wrap.wide { max-width: 60rem; }
+
+/* pita tenun */
+.weave, .strip {
+  height: 16px;
+  background: repeating-linear-gradient(90deg,
+    var(--stripe-red) 0 20px, transparent 20px 26px,
+    var(--stripe-ochre) 26px 38px, transparent 38px 44px,
+    var(--stripe-teal) 44px 56px, transparent 56px 62px);
+  animation: slide 9s linear infinite;
+}
+.weave { margin-left: calc(-1 * var(--gl)); margin-right: calc(-1 * var(--gr)); }
+.strip { height: 10px; }
+@keyframes slide { to { background-position: 62px 0; } }
+
+/* hero */
+.band {
+  position: relative;
+  overflow: hidden;
+  margin-left: calc(-1 * var(--gl));
+  margin-right: calc(-1 * var(--gr));
+  padding-left: var(--gl);
+  padding-right: var(--gr);
+  border-bottom: 1px solid var(--line);
+}
+.net {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  color: var(--ochre); opacity: 0.26;
+  -webkit-mask-image: linear-gradient(to bottom, #000 10%, transparent 95%);
+  mask-image: linear-gradient(to bottom, #000 10%, transparent 95%);
+  pointer-events: none;
+}
+.drift { animation: drift 46s linear infinite; }
+@keyframes drift { to { transform: translate(-56px, -100px); } }
+
+header.hero { position: relative; padding-block: 3rem 2.5rem; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+@media (min-width: 52rem) { .hero-grid { grid-template-columns: minmax(0, 1fr) 16rem; align-items: end; } }
+.hero-text { min-width: 0; }
+.eyebrow {
+  font-family: var(--display); font-weight: 600; font-size: 0.8rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ochre); margin: 0 0 0.75rem;
+}
+h1 {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(2.5rem, 10vw, 4.6rem); line-height: 1; letter-spacing: -0.02em;
+  margin: 0 0 1rem; text-wrap: balance;
+}
+.lead { font-size: 1.3rem; line-height: 1.5; color: var(--muted); margin: 0 0 1.75rem; max-width: 38rem; }
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.9rem 1.5rem; margin: 0; padding-top: 1.25rem; border-top: 1px solid var(--line);
+}
+.facts div { min-width: 0; }
+.facts dt { font-family: var(--display); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0.15rem 0 0; font-size: 1.05rem; line-height: 1.4; }
+
+.rise { animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+.rise.d1 { animation-delay: 0.08s; } .rise.d2 { animation-delay: 0.18s; }
+.rise.d3 { animation-delay: 0.3s; } .rise.d4 { animation-delay: 0.42s; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes settle { from { opacity: 0; transform: scale(0.95) rotate(-1.2deg); } to { opacity: 1; transform: none; } }
+
+/* foto */
+.portrait { margin: 0; background: var(--surface); border: 1px solid var(--line); animation: settle 0.9s cubic-bezier(.2,.7,.2,1) 0.25s both; max-width: 16rem; width: 100%; justify-self: center; }
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.zoom img { display: block; width: 100%; height: auto; }
+.portrait figcaption { font-family: var(--display); font-size: 0.78rem; color: var(--muted); padding: 0.6rem 0.75rem 0.7rem; line-height: 1.35; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 60; background: rgba(8, 6, 5, 0.9);
+  display: flex; align-items: center; justify-content: center;
+  padding: max(16px, env(safe-area-inset-top, 0px)) var(--gr) max(16px, env(safe-area-inset-bottom, 0px)) var(--gl);
+  animation: fade 0.25s ease both;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-height: 88vh; max-width: 100%; width: auto; height: auto; border: 6px solid var(--stripe-ochre); }
+.lightbox .close {
+  position: absolute; top: max(12px, env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+  background: var(--surface); border: 1px solid var(--line); padding: 0.5rem 0.9rem; border-radius: 3px;
+  font-family: var(--display); font-weight: 600; font-size: 0.85rem;
+}
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* navigasi */
+nav.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  margin-left: calc(-1 * var(--gl)); margin-right: calc(-1 * var(--gr));
+  padding-left: var(--gl); padding-right: var(--gr);
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.navin { display: flex; align-items: center; gap: 0.75rem; max-width: 60rem; margin-inline: auto; min-width: 0; }
+.links { display: flex; gap: 1.1rem; overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0; padding-block: 0.8rem; scrollbar-width: none; }
+.links::-webkit-scrollbar { display: none; }
+.links a { font-family: var(--display); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; color: var(--muted); text-decoration: none; }
+.links a:hover { color: var(--ochre); }
+.links a[aria-current="true"] { color: var(--ochre); box-shadow: 0 2px 0 var(--ochre); }
+.tbtn { flex: none; font-family: var(--display); font-weight: 600; font-size: 0.75rem; background: var(--surface); border: 1px solid var(--line); padding: 0.4rem 0.7rem; border-radius: 3px; }
+.tbtn:hover { border-color: var(--ochre); }
+#progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--stripe-red), var(--stripe-ochre), var(--stripe-teal)); }
+
+/* isi */
+section { padding-block: 2.75rem 0.5rem; }
+h2 {
+  font-family: var(--display); font-weight: 800; font-size: clamp(1.55rem, 5vw, 2.1rem);
+  line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 1.1rem; text-wrap: balance;
+}
+h2::after {
+  content: ""; display: block; width: 64px; height: 6px; margin-top: 0.7rem;
+  background: linear-gradient(90deg, var(--stripe-red) 0 24px, transparent 24px 30px, var(--stripe-ochre) 30px 44px, transparent 44px 50px, var(--stripe-teal) 50px 64px);
+}
+h3 { font-family: var(--display); font-weight: 800; font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--red); }
+p { margin: 0 0 1rem; max-width: 40rem; }
+a { color: var(--teal); text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--ochre); outline-offset: 2px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1.1rem 1.2rem 0.4rem; min-width: 0; }
+.card p { font-size: 1.02rem; line-height: 1.55; }
+.key { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: 4px; padding: 1rem 1.25rem 0.25rem; margin: 1.25rem 0; max-width: 40rem; }
+.key p { font-size: 1.02rem; line-height: 1.55; }
+
+.divider { display: block; width: 100%; max-width: 46rem; height: 56px; margin: 2.5rem auto 0; color: var(--ochre); opacity: 0.8; }
+
+/* reveal saat scroll, hanya di browser yang mendukung */
+@supports (animation-timeline: view()) {
+  .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+}
+@keyframes reveal { from { opacity: 0.25; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* garis waktu interaktif */
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.25rem 0 1rem; }
+.chip { font-family: var(--display); font-weight: 600; font-size: 0.82rem; background: var(--surface); border: 1px solid var(--line); padding: 0.45rem 0.85rem; border-radius: 3px; transition: background 0.2s, border-color 0.2s; }
+.chip:hover { border-color: var(--ochre); }
+.chip[aria-pressed="true"], .chip[aria-selected="true"] { background: var(--ochre); color: var(--on-ochre); border-color: var(--ochre); }
+ol.timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+ol.timeline li { border-bottom: 1px solid var(--line); }
+.tl-head { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) auto; gap: 0.25rem 1.25rem; align-items: baseline; width: 100%; text-align: left; background: none; border: 0; padding: 0.95rem 0.25rem; }
+.tl-head:hover .what { color: var(--ochre); }
+.when { font-family: var(--display); font-weight: 800; font-size: 1rem; line-height: 1.4; color: var(--ochre); }
+.what { font-size: 1.05rem; line-height: 1.5; min-width: 0; transition: color 0.2s; }
+.plus { font-family: var(--display); font-weight: 800; color: var(--muted); transition: transform 0.25s; }
+.tl-head[aria-expanded="true"] .plus { transform: rotate(45deg); color: var(--red); }
+.tl-detail { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 0.3s ease, visibility 0.3s; }
+.tl-detail > div { overflow: hidden; min-height: 0; }
+.tl-detail p { font-size: 1.02rem; line-height: 1.55; color: var(--muted); padding: 0 0.25rem 1rem calc(9.5rem + 1.5rem); margin: 0; max-width: none; }
+li.open .tl-detail { grid-template-rows: 1fr; visibility: visible; }
+@media (max-width: 34rem) {
+  .tl-head { grid-template-columns: minmax(0, 1fr) auto; }
+  .when { grid-column: 1 / -1; }
+  .tl-detail p { padding-left: 0.25rem; }
+}
+
+/* kesenian dan kolintang */
+.tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.1rem; }
+.panel[hidden] { display: none; }
+.kol { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1rem 1rem 1.1rem; margin: 1.25rem 0; max-width: 40rem; }
+.kol-title { font-family: var(--display); font-weight: 800; color: var(--red); margin: 0 0 0.75rem; }
+.bars { display: flex; gap: 6px; align-items: flex-start; justify-content: center; padding: 0.9rem 0.6rem; background: var(--bg); border: 1px solid var(--line); border-radius: 3px; }
+.bar {
+  flex: 1 1 0; min-width: 0; padding: 0.35rem 0 0; border: 0; border-radius: 3px;
+  background: linear-gradient(180deg, var(--stripe-ochre), #A8531F);
+  color: #14100E; font-family: var(--display); font-weight: 800; font-size: 0.85rem; line-height: 1.2; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem; touch-action: manipulation; user-select: none;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.35); transition: transform 0.12s, filter 0.12s, box-shadow 0.12s;
+}
+.bar small { font-weight: 600; font-size: 0.62rem; opacity: 0.8; letter-spacing: 0.04em; }
+.bar.on, .bar:active { transform: translateY(3px); filter: brightness(1.3); box-shadow: 0 0 0 rgba(0,0,0,0); }
+.ctl { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.ctl .chip:disabled { opacity: 0.5; cursor: default; }
+.hint { font-size: 0.9rem; color: var(--muted); margin: 0.75rem 0 0; max-width: none; }
+
+/* motif */
+.motif { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.25rem; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1.1rem 1.2rem 0.5rem; }
+.motif svg { width: 100%; height: auto; color: var(--ochre); background: var(--bg); border: 1px solid var(--line); border-radius: 3px; }
+.motif p { font-size: 1.02rem; line-height: 1.55; }
+@media (max-width: 34rem) { .motif { grid-template-columns: minmax(0, 1fr); } .motif svg { max-width: 12rem; } }
+
+/* kuis */
+.quiz { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--stripe-teal); border-radius: 4px; padding: 1.1rem 1.2rem 1.2rem; max-width: 40rem; }
+.qn { font-family: var(--display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin: 0 0 0.4rem; }
+.qt { font-family: var(--display); font-weight: 800; font-size: 1.2rem; line-height: 1.3; margin: 0 0 0.9rem; max-width: none; }
+.opts { display: grid; gap: 0.55rem; }
+.opt { text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 3px; padding: 0.7rem 0.9rem; font-size: 1.02rem; line-height: 1.4; transition: border-color 0.2s, background 0.2s; }
+.opt:hover:not(:disabled) { border-color: var(--ochre); }
+.opt.right { border-color: var(--teal); background: color-mix(in srgb, var(--teal) 18%, var(--bg)); }
+.opt.wrong { border-color: var(--red); background: color-mix(in srgb, var(--red) 16%, var(--bg)); }
+.opt:disabled { cursor: default; }
+.fb { margin: 0.9rem 0 0; font-size: 1rem; line-height: 1.5; animation: rise 0.35s ease both; max-width: none; }
+.score { font-family: var(--display); font-weight: 800; font-size: 2.4rem; line-height: 1; color: var(--ochre); margin: 0.2rem 0 0.6rem; }
+.prog { height: 4px; background: var(--line); margin-bottom: 1rem; }
+.prog i { display: block; height: 100%; width: 0; background: var(--stripe-teal); transition: width 0.35s ease; }
+
+/* tabel */
+.tablewrap { overflow-x: auto; margin-top: 1.25rem; border: 1px solid var(--line); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 1rem; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+td:first-child { font-family: var(--display); font-weight: 600; white-space: nowrap; }
+
+.sources { font-size: 0.98rem; color: var(--muted); }
+.sources ul { padding-left: 1.2rem; margin: 0.5rem 0 0; }
+.sources li { margin-bottom: 0.35rem; overflow-wrap: anywhere; }
+
+/* kaki: siluet Klabat */
+.klabat { display: block; width: 100%; max-width: 60rem; height: auto; margin: 3rem auto 0; color: var(--ochre); }
+.cloud { animation: cloud 40s linear infinite alternate; }
+.cloud.b { animation-duration: 55s; animation-direction: alternate-reverse; }
+@keyframes cloud { from { transform: translateX(-30px); } to { transform: translateX(60px); } }
+footer { padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 0.95rem; color: var(--muted); }
+footer p { max-width: 42rem; }
+
+/* budaya, kamus, kuliner, permainan */
+.gap { margin-top: 2.25rem; }
+.motto { margin: 1.5rem 0 0; padding: 1.4rem 1.25rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--stripe-ochre); border-radius: 4px; max-width: 40rem; }
+.motto-t { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 6.5vw, 2.5rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--ochre); margin: 0 0 0.6rem; }
+.motto figcaption { font-size: 1rem; line-height: 1.55; color: var(--muted); }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0.9rem 1.1rem; margin-top: 0.75rem; max-width: 40rem; font-size: 1.02rem; line-height: 1.55; min-height: 4.6rem; }
+.box b { font-family: var(--display); color: var(--ochre); }
+.tiles { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; transition: gap 0.4s ease; }
+.tiles.joined { gap: 2px; }
+.tile { font-family: var(--display); font-weight: 800; font-size: 1.6rem; padding: 0.5rem 1rem; min-width: 4rem; background: var(--surface); border: 2px solid var(--line); border-radius: 3px; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+.tile.sel { border-color: var(--ochre); background: color-mix(in srgb, var(--ochre) 14%, var(--surface)); transform: translateY(-3px); }
+.tiles.joined .tile { border-color: var(--red); }
+.kata-out { margin: 0.9rem 0 0.75rem; max-width: 40rem; min-height: 4.8rem; }
+.plots { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; max-width: 26rem; margin: 0.75rem 0; }
+.plot { aspect-ratio: 1; background: var(--bg); border: 1px solid var(--line); border-radius: 2px; transition: background 0.25s, transform 0.25s; }
+.plot.done { background: var(--stripe-teal); transform: scale(0.9); }
+.game { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1rem 1.1rem 1.1rem; max-width: 40rem; margin-top: 1rem; }
+.game p { font-size: 1.02rem; max-width: none; }
+.track { position: relative; height: 36px; border-bottom: 3px solid var(--line); max-width: 24rem; margin: 0.75rem 0 0.5rem; }
+.marker { position: absolute; bottom: -3px; left: 50%; width: 26px; height: 26px; margin-left: -13px; background: var(--red); border-radius: 2px; transition: left 0.35s ease; }
+.beats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; max-width: 24rem; margin-bottom: 0.75rem; }
+.beats span { text-align: center; padding: 0.35rem 0; border: 1px solid var(--line); border-radius: 3px; font-family: var(--display); font-size: 0.78rem; font-weight: 600; transition: background 0.15s, color 0.15s; }
+.beats span.on { background: var(--ochre); color: var(--on-ochre); border-color: var(--ochre); }
+.search { display: grid; gap: 0.3rem; max-width: 24rem; margin: 0.5rem 0 0.75rem; }
+.search label { font-family: var(--display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.search input { font: inherit; width: 100%; padding: 0.6rem 0.8rem; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 3px; }
+.dict { display: grid; grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr)); gap: 0.75rem; margin-top: 0.5rem; }
+.entry { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0.8rem 0.95rem; min-width: 0; }
+.entry .tag { font-family: var(--display); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+.entry .w { font-family: var(--display); font-weight: 800; font-size: 1.2rem; color: var(--ochre); overflow-wrap: anywhere; }
+.entry .m { margin: 0.1rem 0 0; font-size: 1.02rem; line-height: 1.4; max-width: none; }
+.entry .n { margin: 0.35rem 0 0; font-size: 0.9rem; line-height: 1.45; color: var(--muted); max-width: none; }
+.dishes { display: grid; grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr)); gap: 0.75rem; margin-top: 0.75rem; }
+.dish { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: 4px; padding: 0.85rem 1rem 0.5rem; min-width: 0; animation: rise 0.35s ease both; }
+.dish h4 { font-family: var(--display); font-weight: 800; font-size: 1.1rem; margin: 0 0 0.3rem; }
+.dish p { font-size: 0.98rem; line-height: 1.5; margin: 0 0 0.6rem; max-width: none; }
+ol.sort { list-style: none; margin: 0.75rem 0; padding: 0; display: grid; gap: 0.5rem; }
+ol.sort li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.5rem; align-items: center; background: var(--bg); border: 1px solid var(--line); border-radius: 3px; padding: 0.5rem 0.6rem 0.5rem 0.8rem; font-size: 1.02rem; line-height: 1.4; }
+ol.sort li.ok { border-color: var(--teal); }
+ol.sort li.bad { border-color: var(--red); }
+ol.sort .yr { font-family: var(--display); font-weight: 800; color: var(--ochre); margin-right: 0.6rem; }
+.mv { display: flex; gap: 0.3rem; }
+.sq { width: 2.3rem; height: 2.3rem; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; font-family: var(--display); font-weight: 800; }
+.sq:hover:not(:disabled) { border-color: var(--ochre); }
+.sq:disabled { opacity: 0.35; cursor: default; }
+#g-status:empty { display: none; }
+
+/* gerak tambahan */
+@property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes spin { to { --ang: 360deg; } }
+.portrait { padding: 4px; border: 0; background: conic-gradient(from var(--ang, 0deg), var(--stripe-red), var(--stripe-ochre), var(--stripe-teal), var(--stripe-red)); animation: settle 0.9s cubic-bezier(.2,.7,.2,1) 0.25s both, spin 7s linear infinite; }
+.portrait .strip { background: repeating-linear-gradient(90deg, var(--stripe-red) 0 20px, transparent 20px 26px, var(--stripe-ochre) 26px 38px, transparent 38px 44px, var(--stripe-teal) 44px 56px, transparent 56px 62px), linear-gradient(var(--surface), var(--surface)); }
+.portrait .zoom, .portrait figcaption { background: var(--surface); }
+
+.net { transform: translateY(calc(var(--sy, 0) * 0.2px)); will-change: transform; }
+.floaters { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 70; }
+
+.tw { display: inline-block; animation: twrise 0.9s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(0.12s + var(--i, 0) * 0.14s); }
+@keyframes twrise { from { opacity: 0; transform: translateY(0.55em) rotate(2deg); } to { opacity: 1; transform: none; } }
+
+.ikat { display: block; width: 100%; max-width: 46rem; height: 28px; margin: 2.5rem auto 0; overflow: hidden; }
+.ikat-g { animation: ikat 6s linear infinite; }
+.ikat.rev .ikat-g { animation-direction: reverse; }
+@keyframes ikat { to { transform: translateX(-36px); } }
+.i-o { fill: none; stroke: var(--ochre); stroke-width: 1.5; }
+.i-r { fill: var(--red); }
+.i-t { fill: var(--stripe-teal); }
+
+.card, .entry, .dish { transition: translate 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+@media (hover: hover) {
+  .card:hover, .entry:hover, .dish:hover { translate: 0 -4px; border-color: var(--ochre); box-shadow: 0 10px 24px color-mix(in srgb, var(--fg) 16%, transparent); }
+}
+.chip, .opt, .tile { position: relative; overflow: hidden; }
+.rip { position: absolute; border-radius: 50%; background: currentColor; opacity: 0.28; transform: scale(0); pointer-events: none; animation: rip 0.6s ease-out forwards; }
+@keyframes rip { to { transform: scale(1); opacity: 0; } }
+
+@supports (animation-timeline: view()) {
+  h2::after { transform-origin: left; animation: grow linear both; animation-timeline: view(); animation-range: entry 10% entry 70%; }
+}
+@keyframes grow { from { transform: scaleX(0.15); } to { transform: scaleX(1); } }
+
+ol.timeline li.pop { animation: rise 0.45s ease both; animation-delay: var(--dl, 0ms); }
+.opt.right { animation: pulse 0.5s ease; }
+.opt.wrong { animation: shake 0.4s ease; }
+@keyframes pulse { 0% { transform: scale(1); } 40% { transform: scale(1.03); } 100% { transform: scale(1); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+.bars { position: relative; }
+.fnote { position: absolute; top: 0.3rem; font-size: 1.2rem; line-height: 1; pointer-events: none; animation: floatnote 1s ease-out forwards; }
+@keyframes floatnote { from { transform: translate(-50%, 0); opacity: 1; } to { transform: translate(-50%, -2.4rem); opacity: 0; } }
+
+.klabat .sun { transform: translateY(calc((1 - var(--p, 0)) * 34px)); }
+.klabat .ridge-b { transform: translateX(calc(var(--p, 0) * -26px)); }
+.bird { color: var(--muted); animation: fly 24s linear infinite; }
+.bird.b2 { animation-duration: 33s; }
+.bird path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; transform-box: fill-box; transform-origin: center; animation: flap 0.6s ease-in-out infinite alternate; }
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(-0.5); } }
+@keyframes fly { from { transform: translate(-40px, 38px); } to { transform: translate(760px, 12px); } }
+
+/* kontrol musik */
+.musicbar { position: fixed; left: var(--gl); right: var(--gr); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 45; display: flex; justify-content: center; pointer-events: none; }
+.mbox { pointer-events: auto; display: flex; align-items: center; gap: 0.75rem; min-width: 0; max-width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0.5rem 0.6rem 0.5rem 0.9rem; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); }
+.mtext { font-family: var(--display); font-size: 0.82rem; line-height: 1.3; min-width: 0; }
+.mbox .chip { flex: none; padding: 0.4rem 0.75rem; }
+.eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 16px; flex: none; }
+.eq i { display: block; width: 3px; height: 4px; background: var(--ochre); }
+.mbox.playing .eq i { animation: eq 0.9s ease-in-out infinite alternate; }
+.mbox.playing .eq i:nth-child(2) { animation-delay: 0.2s; }
+.mbox.playing .eq i:nth-child(3) { animation-delay: 0.4s; }
+.mbox.playing .eq i:nth-child(4) { animation-delay: 0.1s; }
+@keyframes eq { from { height: 4px; } to { height: 16px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<div class="weave" aria-hidden="true"></div>
+
+<div class="band">
+  <svg class="net" aria-hidden="true" focusable="false">
+    <defs>
+      <pattern id="pinatikan" width="56" height="100" patternUnits="userSpaceOnUse">
+        <path d="M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </pattern>
+    </defs>
+    <g class="drift"><rect x="0" y="0" width="140%" height="240%" fill="url(#pinatikan)"/></g>
+  </svg>
+  <canvas class="floaters" id="floaters" aria-hidden="true"></canvas>
+  <div class="wrap wide">
+    <header class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow rise">Pahlawan Nasional · Minahasa, Sulawesi Utara</p>
+          <h1 class="split">Maria Walanda Maramis</h1>
+          <p class="lead rise d2">Perempuan Minahasa yang menjadi yatim piatu sebelum umur tujuh tahun, lalu mendirikan organisasi dan sekolah untuk kaumnya dan ikut memperjuangkan hak perempuan memberikan suara.</p>
+          <dl class="facts rise d3">
+            <div><dt>Nama lahir</dt><dd>Maria Josephine Catherine Maramis</dd></div>
+            <div><dt>Lahir</dt><dd>1 Desember 1872, Kema</dd></div>
+            <div><dt>Wafat</dt><dd>22 April 1924, Maumbi</dd></div>
+            <div><dt>Gelar</dt><dd>Pahlawan Pergerakan Nasional, 20 Mei 1969</dd></div>
+            <div><dt>Julukan</dt><dd>Kartini dari Minahasa</dd></div>
+            <div><dt>Organisasi</dt><dd>PIKAT, berdiri 8 Juli 1917</dd></div>
+          </dl>
+        </div>
+        <figure class="portrait">
+          <div class="strip" aria-hidden="true"></div>
+          <button class="zoom" id="zoom" type="button" aria-label="Perbesar foto Maria Walanda Maramis">
+            <img src="data:image/jpeg;base64,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" width="405" height="600" alt="Potret Maria Walanda Maramis, 1872 sampai 1924">
+          </button>
+          <div class="strip" aria-hidden="true"></div>
+          <figcaption>Potret Maria Walanda Maramis. Ketuk foto untuk memperbesar.</figcaption>
+        </figure>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="close" id="lbclose" type="button">Tutup</button>
+  <img id="lbimg" alt="Potret Maria Walanda Maramis diperbesar">
+</div>
+
+<nav class="top" aria-label="Isi halaman">
+  <div class="navin">
+    <div class="links">
+      <a href="#kecil">Masa kecil</a>
+      <a href="#pikat">PIKAT</a>
+      <a href="#suara">Hak suara</a>
+      <a href="#garis-waktu">Garis waktu</a>
+      <a href="#bunyi">Bunyi Minahasa</a>
+      <a href="#motif">Motif</a>
+      <a href="#budaya">Budaya</a>
+      <a href="#kamus">Kamus</a>
+      <a href="#kuliner">Kuliner</a>
+      <a href="#main">Main</a>
+      <a href="#kuis">Kuis</a>
+      <a href="#sumber">Sumber</a>
+    </div>
+    <button class="tbtn" id="theme-btn" type="button">Tema: otomatis</button>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+</nav>
+
+<div class="wrap">
+
+<section id="kecil">
+  <h2 class="reveal">Masa kecil di pesisir Minahasa</h2>
+  <p class="reveal">Maria lahir di Kema, kota pelabuhan kecil di Minahasa Utara. Orang tuanya Bernardus Maramis dan Sarah Rotinsulu. Menurut salah satu jurnal sejarah, ayahnya seorang pedagang. Kedua orang tuanya meninggal dalam waktu berdekatan, sebagian besar akibat wabah kolera, ketika Maria berumur enam tahun.</p>
+  <p class="reveal">Maria dan saudara-saudaranya kemudian diasuh paman mereka, Ezau Rotinsulu, yang menurut Wikipedia menjabat kepala distrik di Maumbi. Maria bersekolah di Sekolah Melayu bersama kakak perempuannya, Antje. Di sana ia belajar membaca, menulis, ilmu pengetahuan, dan sejarah. Sekolah itu menjadi satu-satunya pendidikan formal yang ia terima.</p>
+  <p class="reveal">Adat pada masa itu tidak mengizinkan anak perempuan melanjutkan sekolah. Kakak laki-lakinya, Andries, bisa masuk Hoofdenschool di Tondano. Maria tidak. Perbedaan perlakuan itu yang kelak ia bawa menjadi gerakan.</p>
+</section>
+
+<section id="manado">
+  <h2 class="reveal">Menikah dan pindah ke Manado</h2>
+  <p class="reveal">Pada 1890 Maria menikah dengan Yoseph Frederik Calusung Walanda, guru bahasa Belanda. Sejak itu ia dikenal sebagai Maria Walanda Maramis. Mereka punya tiga anak, dan menetap di Manado. Di kota ini Maria bergaul dengan kalangan terpelajar dan mulai menulis opini di surat kabar Tjahaja Siang tentang peran ibu dalam keluarga.</p>
+  <p class="reveal">Menurut satu jurnal, Maria dan suaminya tidak lepas dari tekanan. Sang suami sempat kehilangan pekerjaan setelah dituduh memberontak karena menyekolahkan anak-anak mereka di ELS, sekolah dasar Belanda. Maria sendiri dikecam sebagian masyarakat, dan usulan awalnya juga lebih sering ditanggapi dingin daripada disambut.</p>
+  <div class="key reveal">
+    <h3>Mengapa gerakannya dibutuhkan</h3>
+    <p>Perempuan Minahasa hanya bisa bersekolah di Volksschool tiga tahun. Adat melarang mereka lanjut sesudah sekolah rendah. Pendidikan perempuan dianggap cukup bila menyiapkan mereka menikah dan mengurus rumah, sehingga banyak gadis menikah muda tanpa bekal untuk berumah tangga atau mencari nafkah.</p>
+  </div>
+</section>
+
+<section id="pikat">
+  <h2 class="reveal">PIKAT dan sekolah rumah tangga</h2>
+  <p class="reveal">Pada 8 Juli 1917, Maria bersama rekan-rekannya di Manado mendirikan Percintaan Ibu Kepada Anak Temurunnya, disingkat PIKAT. Sasaran awalnya perempuan yang sudah lulus sekolah dasar. Organisasi ini memberi mereka tempat untuk saling bergaul, membekali keterampilan, dan melatih perempuan menyampaikan pandangan secara bebas.</p>
+  <div class="cards">
+    <article class="card reveal">
+      <h3>Sekolah Rumah Tangga</h3>
+      <p>Pada 2 Juni 1918 PIKAT meresmikan sekolah rumah tangga (Huishoudschool) di Manado untuk gadis sekitar umur 16 tahun. Pelajaran awalnya meliputi menjahit dan mode, pertolongan pertama, urusan rumah, dan bahasa Belanda. Materinya kemudian bertambah.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Berjalan mandiri</h3>
+      <p>Para pengajar tidak digaji. Sekolah mulai membiayai diri dari hasil penjualan masakan dan jahitan. Pada 1920 Gubernur Jenderal Van Limburg Stirum juga memberi sumbangan uang kepada PIKAT.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Cabang yang menyebar</h3>
+      <p>Cabang awal berdiri di Manado, Maumbi, Motoling, dan Tondano. Wikipedia mencatat cabang di Batavia, Bogor, Bandung, Cimahi, Magelang, dan Surabaya yang dibentuk perempuan setempat. Sebuah jurnal menyebut PIKAT juga sampai ke Sangihe Talaud, Gorontalo, dan Poso, tanpa tahun yang jelas.</p>
+    </article>
+  </div>
+</section>
+
+<section id="suara">
+  <h2 class="reveal">Hak memberikan suara</h2>
+  <p class="reveal">Pada 1919 pemerintah kolonial membentuk Minahasa Raad, badan perwakilan daerah Minahasa. Pada awalnya hanya laki-laki yang boleh ikut menentukan wakil. Maria memperjuangkan agar perempuan juga punya suara, dan perjuangan itu sampai ke Batavia.</p>
+  <p class="reveal">Pada 1921 pemerintah Belanda mengizinkan perempuan Minahasa ikut memilih wakil untuk Minahasa Raad. Maria mengajak perempuan terbiasa berpikir bebas dan menyampaikan keberatan ketika mereka tahu bahwa hak suara hanya diberikan kepada laki-laki.</p>
+</section>
+
+<svg class="divider" viewBox="0 0 420 56" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+    <g id="wr1"><path d="M10 28 L40 8 L70 28 Z"/><rect x="16" y="28" width="48" height="22"/><circle cx="10" cy="30" r="2.5"/><circle cx="70" cy="30" r="2.5"/><path d="M28 39 l6 -6 l6 6 l6 -6"/></g>
+    <use href="#wr1" x="140"/>
+    <use href="#wr1" x="280"/>
+  </g>
+</svg>
+
+<section id="garis-waktu">
+  <h2 class="reveal">Garis waktu</h2>
+  <p class="reveal">Pilih kelompok peristiwa, lalu ketuk satu baris untuk membaca rinciannya.</p>
+  <div class="chips" role="group" aria-label="Saring peristiwa">
+    <button class="chip" type="button" data-cat="semua" aria-pressed="true">Semua</button>
+    <button class="chip" type="button" data-cat="hidup" aria-pressed="false">Hidupnya</button>
+    <button class="chip" type="button" data-cat="pikat" aria-pressed="false">PIKAT dan sekolah</button>
+    <button class="chip" type="button" data-cat="suara" aria-pressed="false">Hak suara</button>
+    <button class="chip" type="button" data-cat="hormat" aria-pressed="false">Penghormatan</button>
+  </div>
+  <ol class="timeline" id="tl">
+    <li data-cat="hidup"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1 Des 1872</span><span class="what">Lahir di Kema</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Kema adalah kota pelabuhan kecil di Minahasa Utara. Orang tuanya Bernardus Maramis dan Sarah Rotinsulu.</p></div></div></li>
+    <li data-cat="hidup"><button class="tl-head" type="button" aria-expanded="false"><span class="when">Umur 6 tahun</span><span class="what">Menjadi yatim piatu</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Kedua orang tuanya meninggal, sebagian besar akibat wabah kolera. Maria diasuh pamannya, Ezau Rotinsulu, dan bersekolah di Sekolah Melayu bersama kakaknya, Antje.</p></div></div></li>
+    <li data-cat="hidup"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1890</span><span class="what">Menikah dan menetap di Manado</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Suaminya, Yoseph Frederik Calusung Walanda, adalah guru bahasa Belanda. Di Manado Maria mulai menulis opini di surat kabar Tjahaja Siang. Satu jurnal mencatat tahun pernikahan 1891, jadi tahun ini berbeda antar sumber.</p></div></div></li>
+    <li data-cat="pikat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">8 Jul 1917</span><span class="what">PIKAT berdiri di Manado</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Percintaan Ibu Kepada Anak Temurunnya didirikan Maria bersama rekan-rekannya. Cabang awalnya ada di Manado, Maumbi, Motoling, dan Tondano.</p></div></div></li>
+    <li data-cat="pikat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">2 Jun 1918</span><span class="what">Sekolah rumah tangga dibuka</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Sasarannya gadis sekitar umur 16 tahun. Pelajaran awalnya menjahit dan mode, pertolongan pertama, urusan rumah, dan bahasa Belanda. Pengajarnya tidak digaji.</p></div></div></li>
+    <li data-cat="suara"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1919</span><span class="what">Minahasa Raad dibentuk</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Badan perwakilan daerah Minahasa ini awalnya hanya memberi suara kepada laki-laki. Maria mulai memperjuangkan agar perempuan juga boleh memilih.</p></div></div></li>
+    <li data-cat="pikat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1920</span><span class="what">Sumbangan dari Gubernur Jenderal</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Gubernur Jenderal Van Limburg Stirum memberi sumbangan uang kepada PIKAT.</p></div></div></li>
+    <li data-cat="suara"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1921</span><span class="what">Perempuan boleh ikut memilih</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Pemerintah Belanda mengizinkan perempuan Minahasa ikut memilih wakil untuk Minahasa Raad. Perjuangannya sampai ke Batavia.</p></div></div></li>
+    <li data-cat="hidup"><button class="tl-head" type="button" aria-expanded="false"><span class="when">22 Apr 1924</span><span class="what">Wafat di Maumbi</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Maria wafat dalam umur 51 tahun setelah sakit beberapa waktu. Jenazahnya disemayamkan di Huize Maria, lalu dimakamkan di pemakaman keluarga Walanda di Maumbi.</p></div></div></li>
+    <li data-cat="hormat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1967</span><span class="what">Diusulkan sebagai pahlawan nasional</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>PIKAT bersama Gubernur Sulawesi Utara mengajukan namanya kepada pemerintah.</p></div></div></li>
+    <li data-cat="hormat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">20 Mei 1969</span><span class="what">Ditetapkan Pahlawan Nasional</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Gelarnya Pahlawan Pergerakan Nasional, lewat Keputusan Presiden RI No. 012/TK/Tahun 1969.</p></div></div></li>
+    <li data-cat="hormat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">Juli 2018</span><span class="what">PIKAT genap 101 tahun</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Organisasi yang ia dirikan masih berdiri dan merayakan ulang tahunnya yang ke-101.</p></div></div></li>
+    <li data-cat="hormat"><button class="tl-head" type="button" aria-expanded="false"><span class="when">1 Des 2018</span><span class="what">Google Doodle</span><span class="plus" aria-hidden="true">+</span></button><div class="tl-detail"><div><p>Google memperingati ulang tahunnya yang ke-146 dengan sebuah Doodle.</p></div></div></li>
+  </ol>
+</section>
+
+<section id="akhir">
+  <h2 class="reveal">Akhir hidup dan warisan</h2>
+  <p class="reveal">Pada masa sakit parah Maria tidak lagi bisa hadir dalam rapat, tetapi masih menulis surat untuk pengurus PIKAT. Setiap 1 Desember, masyarakat Minahasa memperingati hari lahirnya sebagai Hari Ibu Maria Walanda Maramis, dan cabang-cabang PIKAT mengirim perwakilan ke Maumbi untuk kebaktian singkat.</p>
+  <p class="reveal">Keponakannya, Alexander Andries Maramis, kelak menjadi menteri dan duta besar, dan ikut menandatangani Oeang Republik Indonesia (ORI), uang pertama Republik Indonesia.</p>
+  <div class="cards">
+    <article class="card reveal">
+      <h3>Mulai dari kebutuhan nyata</h3>
+      <p>Maria tidak menunggu perubahan dari atas. Ia melihat gadis-gadis yang tidak siap berumah tangga dan membuat sekolah untuk mereka.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Membangun wadah yang mandiri</h3>
+      <p>Pengajar tanpa gaji dan dapur sekolah yang menghasilkan uang membuat sekolah itu tidak bergantung pada satu penyandang dana.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Bertahan saat dikecam</h3>
+      <p>Ia menghadapi kritik masyarakat dan tekanan terhadap suaminya, tetapi tetap melanjutkan gagasannya sampai akhir hidup.</p>
+    </article>
+  </div>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="ikatp" width="36" height="28" patternUnits="userSpaceOnUse">
+      <polygon class="i-o" points="18,2 34,14 18,26 2,14"/>
+      <polygon class="i-r" points="18,9 25,14 18,19 11,14"/>
+      <path class="i-t" d="M0 0h6l-6 6zM36 0h-6l6 6zM0 28h6l-6-6zM36 28h-6l6-6z"/>
+    </pattern>
+  </defs>
+</svg>
+<svg class="ikat" aria-hidden="true" focusable="false"><g class="ikat-g"><rect width="200%" height="28" fill="url(#ikatp)"/></g></svg>
+
+<section id="bunyi">
+  <h2 class="reveal">Bunyi Minahasa</h2>
+  <p class="reveal">Bagian ini menambahkan latar budaya tanah Maria. Sumber yang dipakai halaman ini tidak menyebut Maria memainkan alat-alat ini, jadi anggap ini gambaran suasana Minahasa pada umumnya.</p>
+  <div class="tabs" role="tablist" aria-label="Kesenian Minahasa" data-tabs="seni">
+    <button class="chip" type="button" role="tab" id="t-kol" aria-controls="p-kol" aria-selected="true">Kolintang</button>
+    <button class="chip" type="button" role="tab" id="t-bambu" aria-controls="p-bambu" aria-selected="false" tabindex="-1">Musik bambu</button>
+    <button class="chip" type="button" role="tab" id="t-maengket" aria-controls="p-maengket" aria-selected="false" tabindex="-1">Maengket</button>
+  </div>
+
+  <div class="panel" id="p-kol" role="tabpanel" aria-labelledby="t-kol">
+    <p>Kolintang adalah alat musik pukul dari bilah-bilah kayu yang disusun berjajar di atas wadah kayu. Menurut sumber, namanya mengacu pada bunyi tong untuk nada rendah, ting untuk nada tinggi, dan tang untuk nada tengah. Bilahnya dibuat dari kayu ringan seperti telur, wenuang, cempaka, dan waru. Perangkat lengkapnya bisa terdiri dari sepuluh instrumen, dari melodi sampai cello dan bass. Pada 2013 kolintang Minahasa diakui sebagai Warisan Budaya Takbenda Nasional.</p>
+    <div class="kol">
+      <p class="kol-title">Mainkan kolintang</p>
+      <div class="bars" id="bars" role="group" aria-label="Delapan bilah kolintang, tangga nada Do sampai Do tinggi"></div>
+      <div class="ctl">
+        <button class="chip" type="button" id="b-scale">Mainkan tangga nada</button>
+        <button class="chip" type="button" id="b-chord">Akor Do Mi Sol</button>
+        <button class="chip" type="button" id="b-game">Tantangan ingatan</button>
+      </div>
+      <p class="hint" id="g-status" aria-live="polite"></p>
+      <p class="hint">Ketuk bilah, atau tekan tombol A S D F G H J K di keyboard. Di Tantangan ingatan, dengarkan urutan nada lalu ulangi. Bunyinya dibuat dari sintesis suara, jadi hanya mendekati kolintang asli.</p>
+    </div>
+  </div>
+
+  <div class="panel" id="p-bambu" role="tabpanel" aria-labelledby="t-bambu" hidden>
+    <p>Orkes bambu Minahasa memakai suling bambu dan suling kuningan, terompet, tuba, serta drum dan simbal. Menurut kelompok Tara-Tara, musik ini dibawa misionaris Katolik Belanda ke Sulawesi Utara pada awal 1900-an. Alat-alat orkestra Barat lalu dibuat dari bambu setempat, dan musiknya bergeser dari musik gereja menjadi musik rakyat khas Minahasa.</p>
+    <p>Pada 2012, sebuah kelompok di Bunaken dilaporkan beranggotakan sekitar 32 orang, terdiri dari tukang perahu, pensiunan, guru, dan nelayan.</p>
+  </div>
+
+  <div class="panel" id="p-maengket" role="tabpanel" aria-labelledby="t-maengket" hidden>
+    <p>Maengket adalah tari tradisional Minahasa yang biasanya dibawakan dua belas pasang penari, dipimpin seorang perempuan bernama kapel. Lagunya dinyanyikan dengan iringan tambur. Penari melangkah kecil sambil berjinjit dan menggerakkan sapu tangan yang disebut lenso.</p>
+    <p>Tarinya terdiri dari tiga babak: Maowey Kamberu yang berkaitan dengan syukur panen padi, Marambak, dan Lalayaan.</p>
+  </div>
+</section>
+
+<section id="motif">
+  <h2 class="reveal">Motif Minahasa di halaman ini</h2>
+  <p class="reveal">Pilih satu motif untuk melihat asalnya. Gambar di bawah adalah ilustrasi sederhana, bukan reproduksi motif aslinya.</p>
+  <div class="tabs" role="tablist" aria-label="Motif" data-tabs="motif">
+    <button class="chip" type="button" role="tab" id="m1" aria-controls="mp1" aria-selected="true">Pinatikan</button>
+    <button class="chip" type="button" role="tab" id="m2" aria-controls="mp2" aria-selected="false" tabindex="-1">Kalwu Patola</button>
+    <button class="chip" type="button" role="tab" id="m3" aria-controls="mp3" aria-selected="false" tabindex="-1">Sinoi</button>
+    <button class="chip" type="button" role="tab" id="m4" aria-controls="mp4" aria-selected="false" tabindex="-1">Waruga</button>
+    <button class="chip" type="button" role="tab" id="m5" aria-controls="mp5" aria-selected="false" tabindex="-1">Klabat</button>
+  </div>
+
+  <div class="motif panel" id="mp1" role="tabpanel" aria-labelledby="m1">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><defs><pattern id="pp" width="28" height="50" patternUnits="userSpaceOnUse"><path d="M14 33L0 25L0 8L14 0L28 8L28 25L14 33L14 50" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14 0L14 17L0 25L0 42L14 50L28 42L28 25L14 17" fill="none" stroke="currentColor" stroke-width="1.5"/></pattern></defs><rect width="120" height="120" fill="url(#pp)"/></svg>
+    <div><h3>Pinatikan</h3><p>Motif garis jala dan segi enam pada kain Bentenan. Menurut kajian yang dirujuk halaman ini, ini motif pertama yang ditenun di Minahasa. Pola inilah yang bergerak pelan di bagian atas halaman.</p></div>
+  </div>
+  <div class="motif panel" id="mp2" role="tabpanel" aria-labelledby="m2" hidden>
+    <svg viewBox="0 0 120 120" aria-hidden="true"><defs><pattern id="kp" width="30" height="30" patternUnits="userSpaceOnUse"><polygon points="15,1 29,15 15,29 1,15" fill="none" stroke="currentColor" stroke-width="1.5"/><polygon points="15,9 21,15 15,21 9,15" fill="var(--red)"/></pattern></defs><rect width="120" height="120" fill="url(#kp)"/></svg>
+    <div><h3>Kalwu Patola</h3><p>Motif Bentenan yang terinspirasi motif patola dari India. Kain Bentenan dibuat dengan teknik ikat ganda, yaitu benang lungsi dan pakan sama-sama diikat dan diwarnai sebelum ditenun.</p></div>
+  </div>
+  <div class="motif panel" id="mp3" role="tabpanel" aria-labelledby="m3" hidden>
+    <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" fill="var(--bg)"/><rect x="6" width="12" height="120" fill="var(--stripe-red)"/><rect x="26" width="8" height="120" fill="var(--stripe-ochre)"/><rect x="42" width="12" height="120" fill="var(--stripe-teal)"/><rect x="62" width="8" height="120" fill="currentColor"/><rect x="78" width="12" height="120" fill="var(--stripe-red)"/><rect x="98" width="8" height="120" fill="var(--stripe-ochre)"/></svg>
+    <div><h3>Sinoi</h3><p>Garis-garis dari benang warna-warni. Pola ini yang dipakai pada pita di paling atas halaman dan pada garis kecil di bawah setiap judul.</p></div>
+  </div>
+  <div class="motif panel" id="mp4" role="tabpanel" aria-labelledby="m4" hidden>
+    <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M14 58 L60 22 L106 58 Z"/><rect x="22" y="58" width="76" height="44"/><circle cx="14" cy="62" r="4"/><circle cx="106" cy="62" r="4"/><path d="M38 80 l7 -9 l7 9 l7 -9 l7 9 l7 -9"/></g></svg>
+    <div><h3>Waruga</h3><p>Peti kubur batu khas Minahasa dengan tutup berbentuk atap piramida. Batunya sejenis tufa yang mudah dipahat, dan permukaannya sering diukir dengan motif manusia, tumbuhan, hewan, dan pola geometris. Tradisinya berlangsung sampai akhir abad ke-19. Siluetnya dipakai sebagai pemisah antarbagian.</p></div>
+  </div>
+  <div class="motif panel" id="mp5" role="tabpanel" aria-labelledby="m5" hidden>
+    <svg viewBox="0 0 120 120" aria-hidden="true"><polygon points="0,110 22,86 40,70 56,44 66,30 74,24 84,34 96,58 108,78 120,92 120,110" fill="var(--surface)" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><text x="60" y="104" text-anchor="middle" font-size="9" fill="currentColor" font-family="sans-serif">±1.995 m</text></svg>
+    <div><h3>Gunung Klabat</h3><p>Gunung tertinggi di Sulawesi Utara, sekitar 1.995 meter di atas permukaan laut, di Minahasa Utara dengan kaki gunung di Airmadidi. Siluetnya ada di bagian paling bawah halaman, lengkap dengan awan yang bergeser pelan.</p></div>
+  </div>
+</section>
+
+<svg class="ikat rev" aria-hidden="true" focusable="false"><g class="ikat-g"><rect width="200%" height="28" fill="url(#ikatp)"/></g></svg>
+
+<section id="budaya">
+  <h2 class="reveal">Budaya khas Minahasa</h2>
+  <p class="reveal">Bagian ini memperkenalkan budaya tanah tempat Maria hidup dan bergerak. Semua bagian di bawah bisa diketuk.</p>
+
+  <figure class="motto reveal">
+    <p class="motto-t">Si Tou Timou Tumou Tou</p>
+    <figcaption>Menurut Good News from Indonesia, artinya "manusia hidup untuk menghidupi atau menjadi berkat bagi orang lain". Ungkapan ini dipopulerkan Dr. Sam Ratulangi dan menjadi semboyan resmi Sulawesi Utara.</figcaption>
+  </figure>
+
+  <h3 class="gap">Dari mana nama Minahasa?</h3>
+  <div class="kata">
+    <div class="tiles" id="tiles">
+      <button class="tile" type="button">ma-</button>
+      <button class="tile" type="button">-in-</button>
+      <button class="tile" type="button">esa</button>
+    </div>
+    <p class="kata-out" id="kata-out" aria-live="polite">Ketuk tiap potongan kata, lalu tekan Gabungkan.</p>
+    <button class="chip" type="button" id="b-gabung">Gabungkan</button>
+  </div>
+
+  <h3 class="gap">Kelompok dan asal-usul</h3>
+  <p>Menurut mitologi Minahasa, leluhur mereka adalah Toar dan Lumimuut. Perselisihan di antara keturunan mereka diselesaikan para pemimpin bernama Tona'as yang bertemu di Awuan. Batu peringatan di lokasi itu, Watu Pinawetengan, dikenal sebagai Batu Pembagian. Pilih satu kelompok untuk membaca asalnya.</p>
+  <div class="chips" id="suku-chips" role="group" aria-label="Kelompok etnis"></div>
+  <div class="box" id="suku-out" aria-live="polite">Pilih salah satu kelompok di atas.</div>
+
+  <h3 class="gap">Mapalus: kerja bersama</h3>
+  <p>Mapalus adalah budaya gotong royong untuk mengerjakan sesuatu bersama demi kepentingan bersama, dan berangkat dari falsafah Si Tou Timou Tumou Tou. Awalnya hanya di bidang pertanian, karena sebagian besar penduduk Minahasa adalah petani. Bentuknya lalu mencakup kedukaan dan pernikahan. Coba bandingkan menggarap sendiri dengan menggarap bersama.</p>
+  <div class="game">
+    <div class="plots" id="plots" aria-hidden="true"></div>
+    <div class="ctl">
+      <button class="chip" type="button" id="mp-solo">Garap sendiri</button>
+      <button class="chip" type="button" id="mp-group">Mapalus, 6 orang</button>
+    </div>
+    <p class="hint" id="mp-status" aria-live="polite">Ilustrasi sederhana: satu putaran, satu orang menggarap satu petak. Angkanya bukan data nyata.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <h3>Pertanian</h3>
+      <p>Setiap orang yang diberi tanggung jawab wajib hadir dan bekerja sesuai jadwal. Pemimpin menjadi teladan di depan. Mereka berangkat dan pulang bersama.</p>
+    </article>
+    <article class="card">
+      <h3>Kedukaan</h3>
+      <p>Berjalan lewat kerukunan duka desa atau keluarga besar. Peserta membayar iuran dan membawa bahan seperti beras satu liter, bahan makanan, kopi, dan gula.</p>
+    </article>
+    <article class="card">
+      <h3>Pernikahan</h3>
+      <p>Warga bergotong royong pada acara sukacita. Banyak kelompok juga memiliki perlengkapan bersama, seperti tenda besi, bangku, dan alat masak besar.</p>
+    </article>
+  </div>
+  <p class="hint">Anggota yang tidak hadir tanpa alasan dapat dikucilkan atau tidak diikutsertakan lagi. Yang tidak hadir karena sakit membayar sejumlah uang sesuai kesepakatan atau mencari pengganti.</p>
+
+  <h3 class="gap">Kabasaran: tarian para Waraney</h3>
+  <p>Kabasaran, juga ditulis Kawasaran, berasal dari Minahasa. Dahulu dibawakan para Waraney, prajurit yang menjadi garda depan suku-suku Minahasa. Penarinya turun-temurun. Sehari-hari mereka petani dan rakyat biasa, dan juga berperan sebagai pemburu, nelayan, ahli pengobatan, dan pembangun.</p>
+  <p>Kostumnya didominasi warna merah. Topinya dihiasi sayap dan paruh burung uwak (Buceros exaratus) atau burung lain, dan kalungnya berhiaskan tengkorak monyet (Macaca nigra). Dahulu tarian ini dibawakan saat prajurit berangkat atau kembali dari perang. Kini tarian ini menyambut tamu kehormatan, hadir di pesta adat, dan tampil di festival.</p>
+
+  <div class="tabs" role="tablist" aria-label="Babak Kabasaran" data-tabs="kabasaran">
+    <button class="chip" type="button" role="tab" id="t-kb1" aria-controls="p-kb1" aria-selected="true">Cakalele</button>
+    <button class="chip" type="button" role="tab" id="t-kb2" aria-controls="p-kb2" aria-selected="false" tabindex="-1">Kumoyak</button>
+    <button class="chip" type="button" role="tab" id="t-kb3" aria-controls="p-kb3" aria-selected="false" tabindex="-1">Lalayaan</button>
+  </div>
+  <div class="box panel" id="p-kb1" role="tabpanel" aria-labelledby="t-kb1">
+    <b>Cakalele.</b> Namanya berasal dari kata saka (berlaga) dan lele (berkejaran melompat-lompat). Penari berekspresi garang.
+  </div>
+  <div class="box panel" id="p-kb2" role="tabpanel" aria-labelledby="t-kb2" hidden>
+    <b>Kumoyak.</b> Namanya berasal dari kata koyak, yang merujuk pada ayunan senjata naik turun. Penari berekspresi garang.
+  </div>
+  <div class="box panel" id="p-kb3" role="tabpanel" aria-labelledby="t-kb3" hidden>
+    <b>Lalayaan.</b> Pada babak inilah penari boleh tersenyum. Tarian aslinya memiliki lebih dari tiga babak, tetapi kini sangat jarang dibawakan.
+  </div>
+
+  <p class="gap">Pilih satu senjata untuk membaca aturannya.</p>
+  <div class="chips" id="senjata" role="group" aria-label="Senjata Kabasaran"></div>
+  <div class="box" id="senjata-out" aria-live="polite">Pilih salah satu senjata di atas.</div>
+
+  <div class="game">
+    <h3>Langkah 4/4</h3>
+    <div class="track" aria-hidden="true"><span class="marker" id="marker"></span></div>
+    <div class="beats" id="beats" aria-hidden="true"><span>kiri</span><span>kiri</span><span>kanan</span><span>kanan</span></div>
+    <button class="chip" type="button" id="b-step">Mainkan langkah</button>
+    <p class="hint">Pola langkahnya dua langkah ke kiri, dua langkah ke kanan. Pertunjukan dimulai atas komando pemimpin tari, yang disebut Sarian (Tonsea) atau Tumu-tuzuk (Tombulu).</p>
+  </div>
+</section>
+
+<section id="kamus">
+  <h2 class="reveal">Kamus bahasa Manado</h2>
+  <p class="reveal">Bahasa Manado, atau Manado Malay, banyak memakai kata serapan dari bahasa Portugis, Belanda, dan Ternate. Bahasa ini terutama dipakai secara lisan dan belum punya ejaan baku, jadi tulisannya bisa berbeda antar sumber.</p>
+  <div class="search">
+    <label for="kam-q">Cari kata atau arti</label>
+    <input id="kam-q" type="search" placeholder="Contoh: torang" autocomplete="off">
+  </div>
+  <div class="chips" id="kam-chips" role="group" aria-label="Kelompok kata"></div>
+  <p class="hint" id="kam-count" aria-live="polite"></p>
+  <div class="dict" id="dict"></div>
+</section>
+
+<section id="kuliner">
+  <h2 class="reveal">Piring Minahasa</h2>
+  <p class="reveal">Pilih bahan, lalu lihat hidangan khas Minahasa yang memakainya. Tanpa pilihan, semua hidangan tampil.</p>
+  <div class="chips" id="bahan" role="group" aria-label="Pilih bahan"></div>
+  <p class="hint" id="dish-count" aria-live="polite"></p>
+  <div class="dishes" id="dishes"></div>
+  <p class="hint">Daftar ini memuat bahan utama dari satu sumber, bukan resep lengkap.</p>
+</section>
+
+<svg class="ikat" aria-hidden="true" focusable="false"><g class="ikat-g"><rect width="200%" height="28" fill="url(#ikatp)"/></g></svg>
+
+<section id="main">
+  <h2 class="reveal">Main dulu</h2>
+  <p class="reveal">Dua permainan dari isi halaman ini. Tantangan kolintang ada di bagian Bunyi Minahasa.</p>
+  <div class="game">
+    <h3>Urutkan peristiwa</h3>
+    <p>Susun peristiwa dari yang paling awal. Pakai tombol panah untuk memindahkan.</p>
+    <ol class="sort" id="sort"></ol>
+    <div class="ctl">
+      <button class="chip" type="button" id="b-check">Periksa urutan</button>
+      <button class="chip" type="button" id="b-shuf">Acak ulang</button>
+    </div>
+    <p class="hint" id="sort-msg" aria-live="polite"></p>
+  </div>
+  <div class="game">
+    <h3>Tebak kata Manado</h3>
+    <div id="wordgame" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="kuis">
+  <h2 class="reveal">Uji pengetahuan</h2>
+  <p class="reveal">Sepuluh pertanyaan dari isi halaman ini.</p>
+  <div class="quiz" id="quiz" aria-live="polite">
+    <noscript>Kuis ini membutuhkan JavaScript.</noscript>
+  </div>
+</section>
+
+<section id="beda">
+  <h2 class="reveal">Beda antar sumber</h2>
+  <p class="reveal">Beberapa fakta dicatat berbeda oleh sumber yang berbeda. Halaman ini memakai versi yang paling banyak dipakai. Untuk tugas atau kutipan resmi, cocokkan lagi dengan sumber utamanya.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Hal</th><th>Dipakai di halaman ini</th><th>Versi lain</th></tr></thead>
+      <tbody>
+        <tr><td>Kelahiran</td><td>1 Desember 1872, Kema</td><td>23 Juli 1872, Tondano (satu jurnal)</td></tr>
+        <tr><td>Pernikahan</td><td>1890</td><td>22 Oktober 1891 (satu jurnal)</td></tr>
+        <tr><td>Wafat</td><td>22 April 1924, umur 51 tahun</td><td>Maret 1924, umur 52 tahun (Orami)</td></tr>
+        <tr><td>Tempat paman</td><td>Maumbi</td><td>Airmadidi (dua jurnal)</td></tr>
+        <tr><td>Hari PIKAT</td><td>8 Juli 1917</td><td>HUT ke-101 dirayakan 10 Juli 2018 (Tirto)</td></tr>
+        <tr><td>Ejaan semboyan</td><td>Si Tou Timou Tumou Tou</td><td>Sitou Timu Tomou Tou (artikel Mapalus)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="sumber" class="sources">
+  <h2 class="reveal">Sumber</h2>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Maria_Walanda_Maramis">Wikipedia, Maria Walanda Maramis</a></li>
+    <li><a href="https://www.orami.co.id/magazine/profil-maria-walanda-maramis">Orami, Profil Maria Walanda Maramis</a></li>
+    <li><a href="https://tirto.id/maria-walanda-maramis-kartini-dari-minahasa-daNC">Tirto.id, Maria Walanda Maramis: Kartini dari Minahasa</a></li>
+    <li><a href="https://tirto.id/geliat-juang-maria-walanda-maramis-lewat-pikat-daNQ">Tirto.id, Geliat Juang Maria Walanda Maramis Lewat PIKAT</a></li>
+    <li><a href="https://jom.unri.ac.id/index.php/JOMFKIP/article/download/19641/18986">JOM FKIP Unri, Peranan Maria Walanda Maramis dalam Memajukan Pendidikan Kaum Perempuan di Minahasa</a></li>
+    <li><a href="https://jurnal.untirta.ac.id/index.php/Candrasangkala/article/download/5952/5090">Candrasangkala Untirta, Maria Walanda Maramis Sang Pelita Pendidikan Perempuan di Minahasa (1917-1924)</a></li>
+    <li><a href="https://ejurnalunsam.id/index.php/jsnbl/article/download/13730/6304/">Jurnal Unsam, Maria Walanda Maramis and the Production of Social Ideas in Minahasa</a></li>
+    <li><a href="https://www.detik.com/edu/detikpedia/d-7023325/7-pahlawan-wanita-indonesia-dari-barat-hingga-timur">Detik Edu, 7 Pahlawan Wanita Indonesia dari Barat hingga Timur</a></li>
+    <li><a href="https://www.goodnewsfromindonesia.id/2020/10/25/alexander-andries-maramis-penanda-tangan-mata-uang-ri-pertama">GoodNewsFromIndonesia, Alexander Andries Maramis</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Kolintang">Wikipedia, Kolintang</a></li>
+    <li><a href="https://www.goodnewsfromindonesia.id/2024/12/11/si-tou-timou-tumou-tou-filosofi-hidup-dari-sulawesi-utara-yang-tetap-relevan-sepanjang-masa">Good News from Indonesia, Si Tou Timou Tumou Tou</a></li>
+    <li><a href="https://www.goodnewsfromindonesia.id/2022/12/29/budaya-mapalus-bukti-solidaritas-orang-minahasa">Good News from Indonesia, Budaya Mapalus</a></li>
+    <li><a href="https://www.inews.id/regional/sulut/tarian-kabasaran-legenda-keberanian-waraney-pertahankan-tanah-minahasa/all">iNews, Tarian Kabasaran</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Minahasan_people">Wikipedia, Minahasan people</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Minahasan_cuisine">Wikipedia, Minahasan cuisine</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Manado_Malay">Wikipedia, Manado Malay</a></li>
+    <li><a href="https://www.thejakartapost.com/news/2012/04/16/musik-bambu-minahasan-pomp-circumstance">The Jakarta Post, Musik bambu Minahasan: Pomp and circumstance</a></li>
+    <li><a href="https://www.detik.com/edu/detikpedia/d-7285180/kenali-tari-maengket-dan-syairnya-yang-penuh-pesan-mendalam">Detik Edu, Kenali Tari Maengket dan Syairnya</a></li>
+    <li><a href="https://www.atlantis-press.com/article/125988168.pdf">Atlantis Press, Waruga: A Stone Coffin in Minahasa</a></li>
+    <li><a href="https://tirto.id/6-wisata-alam-di-minahasa-gunung-klabat-hingga-pulau-lihaga-eFJ9">Tirto.id, 6 Wisata Alam di Minahasa: Gunung Klabat hingga Pulau Lihaga</a></li>
+    <li><a href="https://publication.petra.ac.id/index.php/dkv/article/download/8611/7776">Universitas Kristen Petra, kajian kain Bentenan Minahasa</a></li>
+    <li><a href="https://artsandculture.google.com/asset/bentenan-sarong/egHnHeiMK-jpSw">Google Arts &amp; Culture, Bentenan Sarong</a></li>
+  </ul>
+</section>
+
+<svg class="klabat" viewBox="0 0 700 150" aria-hidden="true" focusable="false">
+  <g class="sun"><circle cx="548" cy="78" r="38" fill="var(--ochre)" opacity="0.12"/><circle cx="548" cy="78" r="22" fill="var(--ochre)" opacity="0.55"/></g>
+  <g class="bird" style="animation-delay:-3s"><path d="M0 0 q5 -6 10 0 q5 -6 10 0"/></g>
+  <g class="bird b2" style="animation-delay:-14s"><path d="M0 0 q4 -5 8 0 q4 -5 8 0"/></g>
+  <polygon class="ridge-b" points="-60,150 -60,104 10,96 80,84 150,70 220,54 280,40 340,30 400,44 470,64 540,80 620,92 700,98 760,104 760,150" fill="var(--line)" opacity="0.65"/>
+  <g class="cloud" fill="var(--line)" opacity="0.8"><ellipse cx="150" cy="38" rx="46" ry="9"/><ellipse cx="185" cy="30" rx="30" ry="8"/></g>
+  <g class="cloud b" fill="var(--line)" opacity="0.7"><ellipse cx="520" cy="52" rx="52" ry="9"/><ellipse cx="490" cy="44" rx="28" ry="7"/></g>
+  <polygon points="0,150 0,118 60,108 120,92 180,76 240,56 290,36 320,22 340,18 360,22 390,36 440,60 500,84 560,100 640,112 700,120 700,150" fill="var(--surface)" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="340" y="140" text-anchor="middle" font-size="12" fill="currentColor" font-family="sans-serif" letter-spacing="2">GUNUNG KLABAT · SEKITAR 1.995 M</text>
+</svg>
+
+<footer>
+  <p>Tampilan halaman ini mengambil acuan dari kain Bentenan, tenun ikat ganda dari Minahasa. Warna merah, kuning, hitam, dan biru-hijau mengikuti pewarna alami yang dulu dipakai penenun: Lelenu, Lenu, Sangket, dan Taun. Motif dan siluet di halaman ini adalah ilustrasi sederhana.</p>
+</footer>
+</div>
+
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+<div class="musicbar">
+  <div class="mbox" id="mbox" role="region" aria-label="Musik latar">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="mtext" id="mtext">Ketuk di mana saja untuk memutar musik kolintang.</span>
+    <button class="chip" type="button" id="mbtn">Putar</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var RM = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  /* tema */
+  var themeBtn = document.getElementById("theme-btn");
+  var modes = ["auto", "light", "dark"];
+  var labels = { auto: "Tema: otomatis", light: "Tema: terang", dark: "Tema: gelap" };
+  var mode = "auto";
+  try { var saved = localStorage.getItem("mwm-theme"); if (saved && modes.indexOf(saved) > -1) { mode = saved; } } catch (e) {}
+  function applyTheme() {
+    if (mode === "auto") { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", mode); }
+    themeBtn.textContent = labels[mode];
+    themeBtn.setAttribute("aria-label", labels[mode] + ". Ketuk untuk mengganti.");
+  }
+  applyTheme();
+  themeBtn.addEventListener("click", function () {
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    try { localStorage.setItem("mwm-theme", mode); } catch (e) {}
+    applyTheme();
+  });
+
+  /* progres scroll dan penanda bagian aktif */
+  var bar = document.getElementById("progress");
+  var links = [].slice.call(document.querySelectorAll(".links a"));
+  var targets = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+    bar.style.transform = "scaleX(" + p + ")";
+    if (!RM) { root.style.setProperty("--p", p.toFixed(3)); root.style.setProperty("--sy", Math.min(window.scrollY, 900)); }
+    var cur = -1, y = window.scrollY + 140;
+    targets.forEach(function (t, i) { if (t && t.offsetTop <= y) { cur = i; } });
+    links.forEach(function (a, i) { if (i === cur) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); } });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* foto diperbesar */
+  var lb = document.getElementById("lightbox");
+  var zoomBtn = document.getElementById("zoom");
+  function openLb() { document.getElementById("lbimg").src = zoomBtn.querySelector("img").src; lb.hidden = false; document.getElementById("lbclose").focus(); }
+  function closeLb() { lb.hidden = true; zoomBtn.focus(); }
+  zoomBtn.addEventListener("click", openLb);
+  lb.addEventListener("click", closeLb);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) { closeLb(); } });
+
+  /* garis waktu */
+  var chips = [].slice.call(document.querySelectorAll(".chip[data-cat]"));
+  var items = [].slice.call(document.querySelectorAll("#tl li"));
+  chips.forEach(function (c) {
+    c.addEventListener("click", function () {
+      var cat = c.getAttribute("data-cat");
+      chips.forEach(function (x) { x.setAttribute("aria-pressed", x === c ? "true" : "false"); });
+      var vis = 0;
+      items.forEach(function (li) {
+        var show = cat === "semua" || li.getAttribute("data-cat") === cat;
+        li.hidden = !show;
+        li.classList.remove("pop");
+        if (show) { li.style.setProperty("--dl", (vis++ * 45) + "ms"); }
+      });
+      void document.body.offsetHeight;
+      if (!RM) { items.forEach(function (li) { if (!li.hidden) { li.classList.add("pop"); } }); }
+    });
+  });
+  items.forEach(function (li) {
+    var b = li.querySelector(".tl-head");
+    b.addEventListener("click", function () {
+      var open = b.getAttribute("aria-expanded") === "true";
+      b.setAttribute("aria-expanded", open ? "false" : "true");
+      li.classList.toggle("open", !open);
+    });
+  });
+
+  /* tab */
+  function initTabs(group) {
+    var tabs = [].slice.call(group.querySelectorAll("[role=tab]"));
+    function select(t) {
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.setAttribute("aria-selected", on ? "true" : "false");
+        x.tabIndex = on ? 0 : -1;
+        document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(t); });
+      t.addEventListener("keydown", function (e) {
+        var n = -1;
+        if (e.key === "ArrowRight") { n = (i + 1) % tabs.length; }
+        else if (e.key === "ArrowLeft") { n = (i - 1 + tabs.length) % tabs.length; }
+        if (n > -1) { e.preventDefault(); tabs[n].focus(); select(tabs[n]); }
+      });
+    });
+  }
+  [].slice.call(document.querySelectorAll("[data-tabs]")).forEach(initTabs);
+
+  /* kolintang */
+  var notes = [
+    { n: "Do", f: 261.63, k: "a" }, { n: "Re", f: 293.66, k: "s" }, { n: "Mi", f: 329.63, k: "d" },
+    { n: "Fa", f: 349.23, k: "f" }, { n: "Sol", f: 392.0, k: "g" }, { n: "La", f: 440.0, k: "h" },
+    { n: "Si", f: 493.88, k: "j" }, { n: "Do", f: 523.25, k: "k" }
+  ];
+  var ctx = null, master = null;
+  function audio() {
+    if (!ctx) {
+      var C = window.AudioContext || window.webkitAudioContext;
+      if (!C) { return null; }
+      try { ctx = new C(); master = ctx.createGain(); master.gain.value = 0.4; master.connect(ctx.destination); } catch (e) { ctx = null; return null; }
+    }
+    if (ctx.state === "suspended") { try { ctx.resume(); } catch (e) {} }
+    return ctx;
+  }
+  function tone(c, f, dest, vol, len) {
+    dest = dest || master; vol = vol || 1; len = len || 1.2;
+    var t = c.currentTime;
+    var g1 = c.createGain(), g2 = c.createGain(), o1 = c.createOscillator(), o2 = c.createOscillator();
+    g1.gain.setValueAtTime(0.0001, t);
+    g1.gain.exponentialRampToValueAtTime(0.7 * vol, t + 0.004);
+    g1.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    g2.gain.setValueAtTime(0.0001, t);
+    g2.gain.exponentialRampToValueAtTime(0.25 * vol, t + 0.003);
+    g2.gain.exponentialRampToValueAtTime(0.0001, t + 0.2);
+    o1.type = "sine"; o1.frequency.value = f;
+    o2.type = "sine"; o2.frequency.value = f * 4;
+    o1.connect(g1); o2.connect(g2); g1.connect(dest); g2.connect(dest);
+    o1.start(t); o2.start(t); o1.stop(t + len + 0.1); o2.stop(t + 0.25);
+  }
+  var barsEl = document.getElementById("bars");
+  var barEls = [];
+  notes.forEach(function (x, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "bar";
+    b.style.height = (9.5 - i * 0.7) + "rem";
+    b.setAttribute("aria-label", "Nada " + x.n + (i === 7 ? " tinggi" : ""));
+    var a = document.createElement("span"); a.textContent = x.n;
+    var s = document.createElement("small"); s.textContent = x.k.toUpperCase();
+    b.appendChild(a); b.appendChild(s);
+    b.addEventListener("pointerdown", function (e) { if (e.pointerType === "mouse" && e.button !== 0) { return; } userNote(i); });
+    b.addEventListener("click", function (e) { if (e.detail === 0) { userNote(i); } });
+    barsEl.appendChild(b);
+    barEls.push(b);
+  });
+  function play(i) {
+    var c = audio();
+    if (c) { try { tone(c, notes[i].f); } catch (e) {} }
+    var el = barEls[i];
+    el.classList.add("on");
+    setTimeout(function () { el.classList.remove("on"); }, 180);
+    if (!RM) {
+      var fn = document.createElement("span");
+      fn.className = "fnote"; fn.textContent = "♪"; fn.setAttribute("aria-hidden", "true");
+      fn.style.left = (el.offsetLeft + el.offsetWidth / 2) + "px";
+      fn.style.color = ["var(--red)", "var(--ochre)", "var(--teal)"][i % 3];
+      barsEl.appendChild(fn);
+      setTimeout(function () { if (fn.parentNode) { fn.parentNode.removeChild(fn); } }, 1000);
+    }
+  }
+  var scaleBtn = document.getElementById("b-scale");
+  var chordBtn = document.getElementById("b-chord");
+  scaleBtn.addEventListener("click", function () {
+    scaleBtn.disabled = true; chordBtn.disabled = true;
+    notes.forEach(function (x, i) { setTimeout(function () { play(i); }, i * 380); });
+    setTimeout(function () { scaleBtn.disabled = false; chordBtn.disabled = false; }, notes.length * 380 + 300);
+  });
+  chordBtn.addEventListener("click", function () { play(0); play(2); play(4); });
+  document.addEventListener("keydown", function (e) {
+    if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) { return; }
+    var panel = document.getElementById("p-kol");
+    if (panel.hidden) { return; }
+    var r = barsEl.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) { return; }
+    var k = (e.key || "").toLowerCase();
+    for (var i = 0; i < notes.length; i++) { if (notes[i].k === k) { userNote(i); break; } }
+  });
+
+  /* musik latar: pola kolintang sederhana buatan sendiri, mulai di sentuhan pertama */
+  var mbox = document.getElementById("mbox");
+  var mtext = document.getElementById("mtext");
+  var mbtn = document.getElementById("mbtn");
+  var PHRASE = [523.25, 659.25, 783.99, 659.25, 587.33, 783.99, 880.0, 783.99, 659.25, 783.99, 1046.5, 783.99, 587.33, 880.0, 783.99, 659.25];
+  var BASS = { 0: 130.81, 8: 196.0 };
+  var musicOn = false, started = false, timer = null, step = 0, mgain = null, pref = "on";
+  try { if (localStorage.getItem("mwm-music") === "off") { pref = "off"; } } catch (e) {}
+  function updateMusicUI() {
+    mbox.classList.toggle("playing", musicOn);
+    if (musicOn) { mtext.textContent = "Musik kolintang: hidup"; mbtn.textContent = "Matikan"; }
+    else if (!started && pref !== "off") { mtext.textContent = "Ketuk di mana saja untuk memutar musik kolintang."; mbtn.textContent = "Putar"; }
+    else { mtext.textContent = "Musik kolintang: mati"; mbtn.textContent = "Nyalakan"; }
+  }
+  function musicTick() {
+    if (!ctx || !mgain) { return; }
+    var i = step % PHRASE.length;
+    try {
+      tone(ctx, PHRASE[i], mgain, 0.8, 1.1);
+      if (BASS[i]) { tone(ctx, BASS[i], mgain, 1.1, 1.8); }
+    } catch (e) {}
+    step++;
+  }
+  function startMusic() {
+    var c = audio();
+    if (!c) { return; }
+    if (!mgain) { mgain = c.createGain(); mgain.gain.value = 0.35; mgain.connect(master); }
+    musicOn = true;
+    if (!timer) { musicTick(); timer = setInterval(musicTick, 380); }
+    updateMusicUI();
+  }
+  function stopMusic() {
+    musicOn = false;
+    if (timer) { clearInterval(timer); timer = null; }
+    updateMusicUI();
+  }
+  function markStarted() {
+    started = true;
+    document.removeEventListener("pointerup", firstGesture, true);
+    document.removeEventListener("keydown", firstGesture, true);
+  }
+  function firstGesture(e) {
+    if (started) { return; }
+    if (e.target && mbox.contains(e.target)) { return; }
+    if (e.type === "keydown" && (e.key === "Tab" || e.key === "Shift" || e.key === "Escape" || e.ctrlKey || e.metaKey || e.altKey)) { return; }
+    markStarted();
+    if (pref !== "off") { startMusic(); } else { updateMusicUI(); }
+  }
+  document.addEventListener("pointerup", firstGesture, true);
+  document.addEventListener("keydown", firstGesture, true);
+  mbtn.addEventListener("click", function () {
+    markStarted();
+    if (musicOn) { pref = "off"; stopMusic(); } else { pref = "on"; startMusic(); }
+    try { localStorage.setItem("mwm-music", pref); } catch (e) {}
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { if (timer) { clearInterval(timer); timer = null; } }
+    else if (musicOn && !timer) { if (audio()) { timer = setInterval(musicTick, 380); } }
+  });
+  updateMusicUI();
+
+  /* tantangan ingatan kolintang */
+  var gBtn = document.getElementById("b-game");
+  var gStatus = document.getElementById("g-status");
+  var gSeq = [], gPos = 0, gMode = "idle", gTok = 0, gBest = 0, gResume = false;
+  function gEnd(msg) {
+    gMode = "idle"; gTok++;
+    gStatus.textContent = msg;
+    gBtn.textContent = "Tantangan ingatan";
+    scaleBtn.disabled = false; chordBtn.disabled = false;
+    if (gResume) { gResume = false; startMusic(); }
+  }
+  function gNext() {
+    var my = ++gTok;
+    gSeq.push(Math.floor(Math.random() * notes.length));
+    gPos = 0; gMode = "show";
+    gStatus.textContent = "Perhatikan urutan nadanya. Panjang: " + gSeq.length + ".";
+    gSeq.forEach(function (n, k) {
+      setTimeout(function () { if (my === gTok && gMode === "show") { play(n); } }, 700 + k * 520);
+    });
+    setTimeout(function () {
+      if (my === gTok && gMode === "show") { gMode = "input"; gStatus.textContent = "Giliranmu. Ulangi " + gSeq.length + " nada."; }
+    }, 700 + gSeq.length * 520);
+  }
+  gBtn.addEventListener("click", function () {
+    if (gMode !== "idle") { gEnd("Tantangan dihentikan."); return; }
+    audio();
+    if (musicOn) { gResume = true; stopMusic(); }
+    scaleBtn.disabled = true; chordBtn.disabled = true;
+    gSeq = []; gBtn.textContent = "Hentikan tantangan"; gNext();
+  });
+  function gHandle(i) {
+    if (gMode !== "input") { return; }
+    if (i !== gSeq[gPos]) {
+      var s = gSeq.length - 1;
+      if (s > gBest) { gBest = s; }
+      gEnd("Belum tepat di nada ke-" + (gPos + 1) + ". Kamu berhasil menghafal " + s + " nada. Terbaik: " + gBest + ".");
+      return;
+    }
+    gPos++;
+    if (gPos === gSeq.length) {
+      if (gSeq.length >= 10) { gBest = 10; gEnd("Hebat! Kamu menghafal 10 nada berturut-turut."); burstAt(barsEl); return; }
+      gMode = "wait";
+      var tk = gTok;
+      gStatus.textContent = "Benar! Bersiap untuk " + (gSeq.length + 1) + " nada.";
+      setTimeout(function () { if (tk === gTok && gMode === "wait") { gNext(); } }, 900);
+    }
+  }
+  function userNote(i) { play(i); gHandle(i); }
+
+  /* alat bantu umum */
+  var cfCv = document.getElementById("confetti");
+  var cfG = cfCv && cfCv.getContext ? cfCv.getContext("2d") : null;
+  var cfParts = [], cfRaf = 0;
+  function cfTick() {
+    cfG.clearRect(0, 0, cfCv.width, cfCv.height);
+    cfParts = cfParts.filter(function (p) { return p.life > 0; });
+    cfParts.forEach(function (p) {
+      p.vy += 0.25; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life -= 0.012;
+      cfG.save();
+      cfG.globalAlpha = Math.max(0, p.life);
+      cfG.translate(p.x, p.y); cfG.rotate(p.r); cfG.fillStyle = p.c;
+      cfG.beginPath(); cfG.moveTo(0, -p.s); cfG.lineTo(p.s * 0.7, 0); cfG.lineTo(0, p.s); cfG.lineTo(-p.s * 0.7, 0); cfG.closePath(); cfG.fill();
+      cfG.restore();
+    });
+    if (cfParts.length) { cfRaf = requestAnimationFrame(cfTick); } else { cfRaf = 0; cfG.clearRect(0, 0, cfCv.width, cfCv.height); }
+  }
+  function burstAt(node) {
+    if (RM || !cfG || !node) { return; }
+    var r = node.getBoundingClientRect();
+    var x = Math.min(Math.max(r.left + r.width / 2, 20), window.innerWidth - 20);
+    var y = Math.min(Math.max(r.top + 40, 80), window.innerHeight - 80);
+    cfCv.width = window.innerWidth; cfCv.height = window.innerHeight;
+    var cols = ["#C93A2E", "#D9972B", "#2F7F86", "#F1E8DC"];
+    for (var i = 0; i < 70; i++) {
+      var a = Math.random() * Math.PI * 2, v = 4 + Math.random() * 7;
+      cfParts.push({ x: x, y: y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 5, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.4, s: 5 + Math.random() * 6, c: cols[i % 4], life: 1 });
+    }
+    if (!cfRaf) { cfTick(); }
+  }
+
+  /* efek sentuh pada tombol */
+  document.addEventListener("pointerdown", function (e) {
+    if (RM || !e.target || !e.target.closest) { return; }
+    var t = e.target.closest(".chip, .opt, .tile");
+    if (!t || t.disabled) { return; }
+    var r = t.getBoundingClientRect();
+    var s = Math.max(r.width, r.height) * 2;
+    var d = document.createElement("span");
+    d.className = "rip"; d.setAttribute("aria-hidden", "true");
+    d.style.width = s + "px"; d.style.height = s + "px";
+    d.style.left = (e.clientX - r.left - s / 2) + "px";
+    d.style.top = (e.clientY - r.top - s / 2) + "px";
+    t.appendChild(d);
+    setTimeout(function () { if (d.parentNode) { d.parentNode.removeChild(d); } }, 650);
+  }, { passive: true });
+
+  /* judul muncul kata demi kata */
+  (function () {
+    var h = document.querySelector("h1.split");
+    if (!h || RM) { return; }
+    var words = h.textContent.trim().split(/\s+/);
+    h.textContent = "";
+    words.forEach(function (w, i) {
+      var s = document.createElement("span");
+      s.className = "tw"; s.style.setProperty("--i", i); s.textContent = w;
+      h.appendChild(s);
+      if (i < words.length - 1) { h.appendChild(document.createTextNode(" ")); }
+    });
+  })();
+
+  /* partikel motif di bagian atas */
+  (function () {
+    var cvs = document.getElementById("floaters");
+    if (!cvs || RM || !cvs.getContext) { return; }
+    var g = cvs.getContext("2d");
+    var W = 0, H = 0, ps = [], run = false, lastW = 0;
+    var cols = ["#C93A2E", "#D9972B", "#2F7F86"];
+    function mk(initial) {
+      return { x: Math.random() * W, y: initial ? Math.random() * H : H + 20, s: 4 + Math.random() * 8, vy: 0.15 + Math.random() * 0.35, sw: Math.random() * 6.28, sv: 0.004 + Math.random() * 0.01, amp: 10 + Math.random() * 22, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.01, c: cols[Math.floor(Math.random() * 3)], a: 0.2 + Math.random() * 0.3 };
+    }
+    function init() {
+      var r = cvs.parentNode.getBoundingClientRect();
+      if (Math.round(r.width) === lastW && ps.length) { return; }
+      lastW = Math.round(r.width);
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = r.width; H = r.height;
+      cvs.width = Math.round(W * dpr); cvs.height = Math.round(H * dpr);
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = W < 600 ? 14 : 26;
+      ps = [];
+      for (var i = 0; i < n; i++) { ps.push(mk(true)); }
+    }
+    function frame() {
+      if (!run) { return; }
+      g.clearRect(0, 0, W, H);
+      ps.forEach(function (p, i) {
+        p.y -= p.vy; p.sw += p.sv; p.r += p.vr;
+        if (p.y < -20) { ps[i] = p = mk(false); }
+        var x = p.x + Math.sin(p.sw) * p.amp;
+        var fade = Math.min(1, Math.max(0, p.y / 120));
+        g.save();
+        g.globalAlpha = p.a * fade;
+        g.translate(x, p.y); g.rotate(p.r); g.fillStyle = p.c;
+        g.beginPath(); g.moveTo(0, -p.s); g.lineTo(p.s * 0.7, 0); g.lineTo(0, p.s); g.lineTo(-p.s * 0.7, 0); g.closePath(); g.fill();
+        g.restore();
+      });
+      requestAnimationFrame(frame);
+    }
+    init();
+    window.addEventListener("resize", init);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        var vis = es[0].isIntersecting;
+        if (vis && !run) { run = true; requestAnimationFrame(frame); }
+        if (!vis) { run = false; }
+      }).observe(cvs.parentNode);
+    } else { run = true; requestAnimationFrame(frame); }
+  })();
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function mkChip(label, pressed) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = label;
+    b.setAttribute("aria-pressed", pressed ? "true" : "false");
+    return b;
+  }
+  function picker(hostId, outId, data) {
+    var host = document.getElementById(hostId), out = document.getElementById(outId), btns = [];
+    data.forEach(function (d) {
+      var b = mkChip(d.k, false);
+      b.addEventListener("click", function () {
+        btns.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        out.textContent = "";
+        var h = document.createElement("b"); h.textContent = d.k + ". "; out.appendChild(h);
+        out.appendChild(document.createTextNode(d.t));
+      });
+      btns.push(b); host.appendChild(b);
+    });
+  }
+
+  /* nama Minahasa */
+  (function () {
+    var tiles = [].slice.call(document.querySelectorAll("#tiles .tile"));
+    var out = document.getElementById("kata-out");
+    var wrap = document.getElementById("tiles");
+    var gb = document.getElementById("b-gabung");
+    var D = ["Awalan ma-.", "Sisipan -in-.", "Kata dasar esa, artinya satu."];
+    tiles.forEach(function (t, i) {
+      t.addEventListener("click", function () {
+        tiles.forEach(function (x) { x.classList.remove("sel"); });
+        t.classList.add("sel");
+        out.textContent = D[i];
+      });
+    });
+    gb.addEventListener("click", function () {
+      var j = wrap.classList.toggle("joined");
+      tiles.forEach(function (x) { x.classList.remove("sel"); });
+      gb.textContent = j ? "Pisahkan" : "Gabungkan";
+      out.textContent = j
+        ? "Ma, in, dan esa menjadi Minahasa, yang diterjemahkan sebagai menjadi satu atau bersatu. Nama ini pertama muncul dalam sumber tertulis pada 1789."
+        : "Ketuk tiap potongan kata, lalu tekan Gabungkan.";
+    });
+  })();
+
+  /* kelompok etnis dan senjata Kabasaran */
+  picker("suku-chips", "suku-out", [
+    { k: "Tonsea", t: "Lahir dari pertemuan para pemimpin bernama Tona'as di Awuan. Wilayah utamanya disebut Maiesu." },
+    { k: "Tombulu", t: "Lahir dari pertemuan para pemimpin bernama Tona'as di Awuan. Wilayah utamanya disebut Niaranan." },
+    { k: "Tontemboan", t: "Lahir dari pertemuan para pemimpin bernama Tona'as di Awuan. Wilayah utamanya disebut Tumaratas." },
+    { k: "Tondano (Toulour)", t: "Tiba di Semenanjung Pulisan, pindah ke pedalaman, lalu menetap di sekitar danau. Toulour berarti orang air." },
+    { k: "Tonsawang", t: "Keturunan orang dari Pulau Maju dan Tidore yang mendarat di Atep." },
+    { k: "Ratahan dan Pasan", t: "Keturunan orang dari Teluk Tomori. Pasan juga disebut Pasam-bangko." },
+    { k: "Ponosakan (Belang)", t: "Keturunan orang dari Bolaang Mongondow." },
+    { k: "Bantik", t: "Keturunan orang dari Toli-toli yang akhirnya menetap di Malalayang." },
+    { k: "Bobentehu (Bajo)", t: "Keturunan orang dari kepulauan Bacan dan Sangi, yang mendirikan kerajaan Manado." }
+  ]);
+  picker("senjata", "senjata-out", [
+    { k: "Pedang", t: "Disebut santi atau kelewang. Ada sembilan gerakan pedang. Pedang tidak boleh dipakai untuk menusuk atau menangkis. Setiap penari memiliki satu senjata tajam warisan leluhur." },
+    { k: "Tombak", t: "Disebut wengkou. Ada sembilan gerakan tombak. Tombak hanya dipakai untuk menusuk." },
+    { k: "Perisai", t: "Disebut kelung. Penangkisan hanya dilakukan dengan perisai." }
+  ]);
+
+  /* mapalus */
+  (function () {
+    var host = document.getElementById("plots"), st = document.getElementById("mp-status");
+    var solo = document.getElementById("mp-solo"), grp = document.getElementById("mp-group");
+    var cells = [], total = 24, res = {}, iv = null;
+    for (var i = 0; i < total; i++) { var c = document.createElement("span"); c.className = "plot"; host.appendChild(c); cells.push(c); }
+    function run(n, key, label) {
+      if (iv) { return; }
+      cells.forEach(function (x) { x.classList.remove("done"); });
+      solo.disabled = true; grp.disabled = true;
+      var filled = 0, round = 0;
+      st.textContent = label + ": mulai menggarap.";
+      iv = setInterval(function () {
+        round++;
+        for (var k = 0; k < n && filled < total; k++) { cells[filled].classList.add("done"); filled++; }
+        st.textContent = label + ": putaran " + round + ", " + filled + " dari " + total + " petak.";
+        if (filled >= total) {
+          clearInterval(iv); iv = null; res[key] = round;
+          solo.disabled = false; grp.disabled = false;
+          var s = label + " selesai dalam " + round + " putaran.";
+          if (res.solo && res.grp) { s += " Garap sendiri: " + res.solo + " putaran. Mapalus 6 orang: " + res.grp + " putaran."; }
+          st.textContent = s;
+        }
+      }, 170);
+    }
+    solo.addEventListener("click", function () { run(1, "solo", "Garap sendiri"); });
+    grp.addEventListener("click", function () { run(6, "grp", "Mapalus 6 orang"); });
+  })();
+
+  /* langkah Kabasaran */
+  (function () {
+    var marker = document.getElementById("marker");
+    var beats = [].slice.call(document.querySelectorAll("#beats span"));
+    var btn = document.getElementById("b-step");
+    var pos = [35, 20, 35, 50];
+    var tm = [];
+    function reset() { marker.style.left = "50%"; beats.forEach(function (b) { b.classList.remove("on"); }); }
+    btn.addEventListener("click", function () {
+      tm.forEach(clearTimeout); tm = []; reset();
+      btn.disabled = true;
+      var c = audio();
+      for (var n = 0; n < 8; n++) {
+        (function (n) {
+          tm.push(setTimeout(function () {
+            var k = n % 4;
+            beats.forEach(function (b, j) { b.classList.toggle("on", j === k); });
+            marker.style.left = pos[k] + "%";
+            if (c) { try { tone(c, k === 0 ? 98 : 130.81, master, 1, 0.3); } catch (e) {} }
+          }, 300 + n * 480));
+        })(n);
+      }
+      tm.push(setTimeout(function () { reset(); btn.disabled = false; }, 300 + 8 * 480 + 200));
+    });
+  })();
+
+  /* kamus Manado */
+  var KAM = [
+    { w: "kita, ta", m: "saya", c: "Kata ganti", n: "Berarti saya, bukan kita seperti dalam bahasa Indonesia baku.", g: 1 },
+    { w: "ngana, na", m: "kamu (tunggal)", c: "Kata ganti", n: "Berasal dari bahasa Ternate-Tidore.", g: 1 },
+    { w: "torang, tong", m: "kami atau kita (jamak)", c: "Kata ganti", g: 1 },
+    { w: "ngoni", m: "kalian", c: "Kata ganti", n: "Berasal dari bahasa Ternate-Tidore.", g: 1 },
+    { w: "dorang, dong", m: "mereka", c: "Kata ganti", g: 1 },
+    { w: "io", m: "ya", c: "Penanda", g: 1 },
+    { w: "nyanda, nda'", m: "tidak", c: "Penanda", g: 1 },
+    { w: "so", m: "sudah", c: "Penanda", n: "Torang so makang: kami sudah makan.", g: 1 },
+    { w: "ada + kata kerja", m: "penanda sudah", c: "Penanda", n: "Dorang ada turung pigi ka Wenang: mereka sudah turun pergi ke Wenang." },
+    { w: "mar", m: "tetapi", c: "Penanda", n: "Dari bahasa Belanda maar.", g: 1 },
+    { w: "kwa'", m: "partikel rasa kasihan, frustrasi, atau penegasan", c: "Penanda", n: "Dipakai misalnya ketika saran tidak diikuti." },
+    { w: "pe", m: "penanda kepemilikan", c: "Penanda", n: "Kita pe tamáng: teman saya." },
+    { w: "jang", m: "jangan", c: "Penanda", n: "Jang badusta ngana pa kita!: jangan berbohong kepada saya.", g: 1 },
+    { w: "kyapa", m: "mengapa", c: "Penanda", g: 1 },
+    { w: "sapa", m: "siapa", c: "Penanda", g: 1 },
+    { w: "kadera", m: "kursi", c: "Serapan", n: "Dari bahasa Portugis.", g: 1 },
+    { w: "lenso", m: "saputangan", c: "Serapan", n: "Dari bahasa Portugis. Penari Maengket menggerakkan lenso.", g: 1 },
+    { w: "milu", m: "jagung", c: "Serapan", n: "Dari bahasa Portugis.", g: 1 },
+    { w: "bandera", m: "bendera", c: "Serapan", n: "Dari bahasa Portugis.", g: 1 },
+    { w: "klar", m: "sudah selesai", c: "Serapan", n: "Dari bahasa Belanda." },
+    { w: "om, oma, opa, tante", m: "paman, nenek, kakek, bibi", c: "Serapan", n: "Dari bahasa Belanda." },
+    { w: "baku", m: "saling", c: "Serapan", n: "Dari bahasa Ternate. Baku hantam berarti saling memukul.", g: 1 },
+    { w: "karlota", m: "suka bergosip", c: "Gaul", n: "Bahasa gaul sejak 1990-an." },
+    { w: "budo'", m: "berkulit terang", c: "Gaul" },
+    { w: "dodu'", m: "cegukan", c: "Gaul" },
+    { w: "makang", m: "makan", c: "Aturan bunyi", n: "Akhiran n atau m berubah menjadi -ng." },
+    { w: "jalang", m: "jalan", c: "Aturan bunyi", n: "Akhiran n atau m berubah menjadi -ng." },
+    { w: "sirang", m: "siram", c: "Aturan bunyi", n: "Akhiran n atau m berubah menjadi -ng." },
+    { w: "bajalang", m: "berjalan", c: "Aturan bunyi", n: "Awalan ber- berubah menjadi ba-." },
+    { w: "batobo", m: "berenang", c: "Aturan bunyi", n: "Awalan ber- berubah menjadi ba-." },
+    { w: "batolor", m: "bertelur", c: "Aturan bunyi", n: "Awalan ber- berubah menjadi ba-." },
+    { w: "manari", m: "menari", c: "Aturan bunyi", n: "Awalan me(N)- berubah menjadi ma(N)-." },
+    { w: "mangael", m: "mengail", c: "Aturan bunyi", n: "Awalan me(N)- berubah menjadi ma(N)-." },
+    { w: "mancari", m: "mencari", c: "Aturan bunyi", n: "Awalan me(N)- berubah menjadi ma(N)-." },
+    { w: "mamasa", m: "memasak", c: "Aturan bunyi", n: "Awalan me(N)- berubah menjadi ma(N)-." }
+  ];
+  (function () {
+    var cats = ["Semua", "Kata ganti", "Penanda", "Serapan", "Gaul", "Aturan bunyi"];
+    var cat = "Semua", q = "";
+    var chipsHost = document.getElementById("kam-chips"), input = document.getElementById("kam-q");
+    var dict = document.getElementById("dict"), cnt = document.getElementById("kam-count");
+    var cb = [];
+    cats.forEach(function (c) {
+      var b = mkChip(c, c === "Semua");
+      b.addEventListener("click", function () {
+        cat = c;
+        cb.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        draw();
+      });
+      cb.push(b); chipsHost.appendChild(b);
+    });
+    input.addEventListener("input", function () { q = input.value.trim().toLowerCase(); draw(); });
+    function draw() {
+      dict.textContent = "";
+      var n = 0;
+      KAM.forEach(function (e) {
+        if (cat !== "Semua" && e.c !== cat) { return; }
+        if (q && (e.w + " " + e.m).toLowerCase().indexOf(q) < 0) { return; }
+        n++;
+        var d = el("div", "entry");
+        d.appendChild(el("div", "tag", e.c));
+        d.appendChild(el("div", "w", e.w));
+        d.appendChild(el("p", "m", e.m));
+        if (e.n) { d.appendChild(el("p", "n", e.n)); }
+        dict.appendChild(d);
+      });
+      cnt.textContent = n ? "Menampilkan " + n + " dari " + KAM.length + " entri." : "Tidak ada kata yang cocok. Coba kata lain atau pilih Semua.";
+    }
+    draw();
+  })();
+
+  /* kuliner */
+  (function () {
+    var D = [
+      { n: "Tinutuan", p: "Bubur manado berisi sayuran dan nasi.", t: ["sayur"] },
+      { n: "Cakalang fufu", p: "Ikan cakalang (skipjack tuna) yang diawetkan dan diasap.", t: ["ikan"] },
+      { n: "Woku", p: "Babi, ayam, atau ikan dengan bumbu woku.", t: ["ikan", "daging"] },
+      { n: "Rica-rica", p: "Babi, ayam, atau ikan dengan banyak cabai.", t: ["ikan", "daging"] },
+      { n: "Panada", p: "Isiannya ikan cakalang cincang berbumbu.", t: ["ikan"] },
+      { n: "Klappertaart", p: "Hidangan berbahan kelapa. Namanya dari bahasa Belanda, artinya coconut tart.", t: ["kelapa"] },
+      { n: "Brenebon", p: "Kacang merah, kadang dengan kaki babi, daging sapi, atau ayam.", t: ["kacang", "daging"] }
+    ];
+    var T = [["ikan", "Ikan"], ["daging", "Daging"], ["sayur", "Sayur dan nasi"], ["kelapa", "Kelapa"], ["kacang", "Kacang"]];
+    var on = {};
+    var host = document.getElementById("bahan"), grid = document.getElementById("dishes"), cnt = document.getElementById("dish-count");
+    T.forEach(function (x) {
+      var b = mkChip(x[1], false);
+      b.addEventListener("click", function () {
+        on[x[0]] = !on[x[0]];
+        b.setAttribute("aria-pressed", on[x[0]] ? "true" : "false");
+        draw();
+      });
+      host.appendChild(b);
+    });
+    function draw() {
+      grid.textContent = "";
+      var keys = Object.keys(on).filter(function (k) { return on[k]; });
+      var n = 0;
+      D.forEach(function (d) {
+        if (keys.length && !d.t.some(function (t) { return keys.indexOf(t) > -1; })) { return; }
+        n++;
+        var c = el("div", "dish");
+        c.appendChild(el("h4", "", d.n));
+        c.appendChild(el("p", "", d.p));
+        grid.appendChild(c);
+      });
+      cnt.textContent = keys.length ? n + " hidangan memakai bahan yang kamu pilih." : "Menampilkan semua " + D.length + " hidangan.";
+    }
+    draw();
+  })();
+
+  /* urutkan peristiwa */
+  (function () {
+    var EV = [
+      { t: "Maria lahir di Kema", y: "1872" },
+      { t: "Maria menikah dan menetap di Manado", y: "1890" },
+      { t: "PIKAT berdiri di Manado", y: "1917" },
+      { t: "Perempuan Minahasa boleh ikut memilih", y: "1921" },
+      { t: "Maria wafat di Maumbi", y: "1924" },
+      { t: "Maria ditetapkan Pahlawan Nasional", y: "1969" }
+    ];
+    var list = document.getElementById("sort"), msg = document.getElementById("sort-msg");
+    var order = [], checked = false;
+    function newOrder() {
+      do { order = shuffle(EV.map(function (_, i) { return i; })); } while (order.every(function (v, p) { return v === p; }));
+      checked = false; msg.textContent = ""; draw();
+    }
+    function move(p, d) {
+      var q = p + d, t = order[p]; order[p] = order[q]; order[q] = t;
+      checked = false; msg.textContent = ""; draw();
+      var row = list.children[q];
+      var b = row.querySelectorAll(".sq")[d < 0 ? 0 : 1];
+      if (!b || b.disabled) { b = row.querySelector(".sq:not(:disabled)"); }
+      if (b) { b.focus(); }
+    }
+    function draw() {
+      list.textContent = "";
+      order.forEach(function (idx, p) {
+        var li = document.createElement("li");
+        var txt = document.createElement("span");
+        if (checked) {
+          li.className = idx === p ? "ok" : "bad";
+          txt.appendChild(el("span", "yr", EV[idx].y));
+        }
+        txt.appendChild(document.createTextNode(EV[idx].t));
+        var mv = el("div", "mv");
+        var up = el("button", "sq", "↑"); up.type = "button"; up.setAttribute("aria-label", "Naikkan: " + EV[idx].t); up.disabled = p === 0;
+        var dn = el("button", "sq", "↓"); dn.type = "button"; dn.setAttribute("aria-label", "Turunkan: " + EV[idx].t); dn.disabled = p === order.length - 1;
+        up.addEventListener("click", function () { move(p, -1); });
+        dn.addEventListener("click", function () { move(p, 1); });
+        mv.appendChild(up); mv.appendChild(dn);
+        li.appendChild(txt); li.appendChild(mv);
+        list.appendChild(li);
+      });
+    }
+    document.getElementById("b-check").addEventListener("click", function () {
+      checked = true; draw();
+      var ok = order.filter(function (v, p) { return v === p; }).length;
+      if (ok === EV.length) { burstAt(list); }
+      msg.textContent = ok === EV.length ? "Urutannya benar semua." : ok + " dari " + EV.length + " sudah di tempat yang benar. Perbaiki yang bertanda merah.";
+    });
+    document.getElementById("b-shuf").addEventListener("click", newOrder);
+    newOrder();
+  })();
+
+  /* tebak kata Manado */
+  (function () {
+    var host = document.getElementById("wordgame");
+    var pool = KAM.filter(function (e) { return e.g; });
+    var N = 6, rounds = [], ri = 0, sc = 0;
+    function newGame() {
+      rounds = shuffle(pool.slice()).slice(0, N).map(function (e) {
+        var others = [];
+        shuffle(pool.slice()).forEach(function (x) { if (x.m !== e.m && others.indexOf(x.m) < 0) { others.push(x.m); } });
+        var opts = shuffle([e.m].concat(others.slice(0, 3)));
+        return { w: e.w.split(",")[0], a: opts.indexOf(e.m), o: opts, n: e.n || "" };
+      });
+      ri = 0; sc = 0; draw();
+    }
+    function draw() {
+      host.textContent = "";
+      var prog = el("div", "prog"); var pi = document.createElement("i"); prog.appendChild(pi); host.appendChild(prog);
+      pi.style.width = (ri / N * 100) + "%";
+      if (ri >= N) {
+        host.appendChild(el("p", "qn", "Hasil"));
+        host.appendChild(el("p", "score", sc + " dari " + N));
+        if (sc === N) { burstAt(host); }
+        var again = el("button", "chip", "Main lagi"); again.type = "button";
+        again.addEventListener("click", newGame);
+        var w = el("div", "ctl"); w.appendChild(again); host.appendChild(w);
+        return;
+      }
+      var cur = rounds[ri];
+      host.appendChild(el("p", "qn", "Kata " + (ri + 1) + " dari " + N));
+      host.appendChild(el("p", "qt", "Apa arti \"" + cur.w + "\"?"));
+      var opts = el("div", "opts");
+      var fb = el("p", "fb"); fb.hidden = true;
+      var next = el("button", "chip", ri === N - 1 ? "Lihat hasil" : "Kata berikutnya"); next.type = "button"; next.hidden = true;
+      var bs = [];
+      cur.o.forEach(function (text, i) {
+        var b = el("button", "opt", text); b.type = "button";
+        b.addEventListener("click", function () {
+          bs.forEach(function (x, j) { x.disabled = true; if (j === cur.a) { x.classList.add("right"); } });
+          if (i === cur.a) { sc++; fb.textContent = "Benar." + (cur.n ? " " + cur.n : ""); } else { b.classList.add("wrong"); fb.textContent = "Belum tepat. Artinya " + cur.o[cur.a] + "." + (cur.n ? " " + cur.n : ""); }
+          fb.hidden = false; next.hidden = false; next.focus();
+        });
+        bs.push(b); opts.appendChild(b);
+      });
+      next.addEventListener("click", function () { ri++; draw(); });
+      host.appendChild(opts); host.appendChild(fb);
+      var wr = el("div", "ctl"); wr.appendChild(next); host.appendChild(wr);
+    }
+    newGame();
+  })();
+
+  /* kuis */
+  var Q = [
+    { q: "Apa kepanjangan PIKAT?", o: ["Percintaan Ibu Kepada Anak Temurunnya", "Persatuan Ibu Kota dan Tani", "Perkumpulan Istri Kerabat Adat Tondano", "Pusat Ilmu Kerumahtanggaan"], a: 0, e: "PIKAT didirikan pada 8 Juli 1917 di Manado." },
+    { q: "Apa satu-satunya pendidikan formal yang Maria terima?", o: ["Hoofdenschool di Tondano", "Sekolah Melayu", "ELS di Manado", "Sekolah rumah tangga PIKAT"], a: 1, e: "Hoofdenschool di Tondano hanya bisa dimasuki kakak laki-lakinya, Andries." },
+    { q: "Apa yang diizinkan pemerintah Belanda pada 1921?", o: ["Perempuan menjadi kepala distrik", "Perempuan ikut memilih wakil Minahasa Raad", "Sekolah rumah tangga ditutup", "PIKAT dibubarkan"], a: 1, e: "Maria memperjuangkan hak ini sejak Minahasa Raad dibentuk pada 1919." },
+    { q: "Kapan Maria ditetapkan sebagai Pahlawan Nasional?", o: ["17 Agustus 1945", "1 Desember 1872", "20 Mei 1969", "10 November 1969"], a: 2, e: "Gelarnya Pahlawan Pergerakan Nasional, lewat Keppres No. 012/TK/Tahun 1969." },
+    { q: "Siapa keponakan Maria yang ikut menandatangani Oeang Republik Indonesia?", o: ["Sam Ratulangi", "Alexander Andries Maramis", "Wolter Monginsidi", "Arie Lasut"], a: 1, e: "A.A. Maramis kelak menjadi menteri dan duta besar." },
+    { q: "Nama kolintang, menurut sumber, mengacu pada bunyi apa?", o: ["Tong, ting, dan tang", "Dung, dang, dan dong", "Tik, tak, dan tuk", "Bum, bam, dan bim"], a: 0, e: "Tong untuk nada rendah, ting untuk nada tinggi, dan tang untuk nada tengah." },
+    { q: "Apa arti Si Tou Timou Tumou Tou, menurut artikel yang dirujuk halaman ini?", o: ["Bersatu kita teguh", "Laut adalah ibu kita", "Manusia hidup untuk menghidupi atau menjadi berkat bagi orang lain", "Bekerja keras demi pahala"], a: 2, e: "Ungkapan ini dipopulerkan Dr. Sam Ratulangi dan menjadi semboyan resmi Sulawesi Utara." },
+    { q: "Kata Minahasa tersusun dari ma-, -in-, dan esa. Apa arti esa?", o: ["Air", "Satu", "Batu", "Gunung"], a: 1, e: "Minahasa diterjemahkan sebagai menjadi satu atau bersatu." },
+    { q: "Dalam tari Kabasaran, apa satu-satunya yang dipakai untuk menangkis?", o: ["Pedang", "Tombak", "Topi berbulu", "Perisai"], a: 3, e: "Pedang tidak dipakai menusuk atau menangkis, dan tombak hanya untuk menusuk. Penangkisan hanya dengan perisai." },
+    { q: "Dalam bahasa Manado, apa arti torang?", o: ["Kalian", "Kami atau kita (jamak)", "Mereka", "Saya"], a: 1, e: "Torang dan tong berarti kami atau kita. Kata kita justru berarti saya." }
+  ];
+  var quiz = document.getElementById("quiz");
+  var qi = 0, score = 0;
+  function el(tag, cls, text) { var x = document.createElement(tag); if (cls) { x.className = cls; } if (text) { x.textContent = text; } return x; }
+  function renderQuiz() {
+    quiz.textContent = "";
+    var prog = el("div", "prog"); var pi = document.createElement("i"); prog.appendChild(pi); quiz.appendChild(prog);
+    pi.style.width = (qi / Q.length * 100) + "%";
+    if (qi >= Q.length) {
+      quiz.appendChild(el("p", "qn", "Hasil"));
+      quiz.appendChild(el("p", "score", score + " dari " + Q.length));
+      if (score === Q.length) { burstAt(quiz); }
+      var msg = score === Q.length ? "Semua benar. Kamu sudah mengenal Maria Walanda Maramis dengan baik." : score >= 8 ? "Hampir sempurna. Baca lagi garis waktunya untuk yang terlewat." : "Coba baca halaman ini sekali lagi, lalu ulangi kuisnya.";
+      quiz.appendChild(el("p", "fb", msg));
+      var again = el("button", "chip", "Ulangi kuis"); again.type = "button";
+      again.addEventListener("click", function () { qi = 0; score = 0; renderQuiz(); });
+      var wrap = el("div", "ctl"); wrap.appendChild(again); quiz.appendChild(wrap);
+      return;
+    }
+    var cur = Q[qi];
+    quiz.appendChild(el("p", "qn", "Pertanyaan " + (qi + 1) + " dari " + Q.length));
+    quiz.appendChild(el("p", "qt", cur.q));
+    var opts = el("div", "opts");
+    var fb = el("p", "fb"); fb.hidden = true;
+    var next = el("button", "chip", qi === Q.length - 1 ? "Lihat hasil" : "Pertanyaan berikutnya"); next.type = "button"; next.hidden = true;
+    var buttons = [];
+    cur.o.forEach(function (text, i) {
+      var b = el("button", "opt", text); b.type = "button";
+      b.addEventListener("click", function () {
+        buttons.forEach(function (x, j) { x.disabled = true; if (j === cur.a) { x.classList.add("right"); } });
+        if (i === cur.a) { score++; fb.textContent = "Benar. " + cur.e; } else { b.classList.add("wrong"); fb.textContent = "Belum tepat. " + cur.e; }
+        fb.hidden = false; next.hidden = false; next.focus();
+      });
+      buttons.push(b); opts.appendChild(b);
+    });
+    next.addEventListener("click", function () { qi++; renderQuiz(); });
+    quiz.appendChild(opts); quiz.appendChild(fb);
+    var w = el("div", "ctl"); w.appendChild(next); quiz.appendChild(w);
+  }
+  renderQuiz();
+})();
+</script>
+
+</body></html>
